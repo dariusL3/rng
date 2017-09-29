@@ -4,6 +4,7 @@ from gmpy2 import mpz
 import time
 import sys
 
+offset = 120
 #uses Miller-Rabin primality test, which is always correct when it  yields False, but has a chance to incorrectly yield True.
 #anyway, this function is not called by any other function inside the scope of this file
 def findPrime(nbits,rs):
@@ -14,7 +15,6 @@ def findPrime(nbits,rs):
 
 #currently testing for small (known, correct) values of prime p
 def test(args):
-	print args
 	p,n,t,secret = [mpz(ele) for ele in args[1:5]]
 
 	if not gmpy2.is_prime(p):
@@ -24,7 +24,7 @@ def test(args):
 	pairs = ss.generateTestKeyPairs(n)
 	shares = ss.PVSSDistribute(secret, n,t)
 	dec = [ss.decryptShare(shares[i], pairs[i][0]) for i in range(n)]
-	param1 = [i+1 for i in range(t)]
+	param1 = [i+offset for i in range(t)]
 	param2 = [dec[i] for i in range(t)]
 	res = ss.PVSSReconstruct(param1, param2)
 	print res
@@ -76,7 +76,7 @@ class PVSS:
 		print poly
 		result = []
 		for i in range(n):
-			share = self.evaluatePoly(poly, i+1, self.prime-1)
+			share = self.evaluatePoly(poly, i+offset, self.prime-1)
 			#sup.append(share)
 			share = gmpy2.powmod(publicKeys[i], share, self.prime)
 			result.append(share)
@@ -111,12 +111,14 @@ class PVSS:
 			for otherx in xl:
 				if not otherx==x:
 					lambnum *= otherx
+					#lambnum = gmpy2.f_mod(lambnum, self.prime-1)
 					lambden *= otherx-x
 
 			#lambnum = gmpy2.f_mod(mpz(lambnum), self.prime)
 			#lambden = gmpy2.f_mod(mpz(lambden), self.prime)
 			#lamb = gmpy2.f_mod(lambnum*gmpy2.invert(lambden,self.prime),self.prime)
 			lamb = lambnum / lambden
+			lamb = gmpy2.f_mod(lamb, self.prime-1)
 			print (lambnum,lambden,lamb)
 			temp = gmpy2.powmod(dSecrets[i],lamb, self.prime)
 			result = gmpy2.f_mod(temp*result, self.prime)
