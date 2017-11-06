@@ -1,4 +1,7 @@
 # 6/11:
+	- added implementation for SCRAPE protocol
+	- added reconstructing party's proof in PVSS
+	- all implementations are for demonstration and do not involve creating dummy entities / simulating internet connections etc.
 	- added a simple implementation for Reed-Solomon code (for verification phase)
 	- mainly manipulates the matrices G and H, using SymPy library
 	- note that SymPy does not come with mpz support or Zp-typed elements, so it should only be used for small numbers

@@ -125,13 +125,13 @@ def test(args):
 	print "Proof (v): "+ conc([tostr(v) for v in proof[0]])
 	print "Proof (e): "+proof[1].digits()
 	print "Proof (z): "+tostr(proof[2])
-	print "...Proof valid !" if ss.verifyZKP(shares,proof[0],proof[1],proof[2]) else "...Bad Proof !"
+	print "...Proof valid !" if ss.verifyZKP(shares,proof[0],proof[1],proof[2],True) else "...Bad Proof !"
 	
-
-	dec = [ss.decryptShare(shares[i], ss.secretKeys[i]) for i in range(n)] 
+	print "\nReconstruction..."
+	dec = [ss.decryptWithProof(shares, i) for i in range(n)] 
 	indexes = ss.getRandomCollection(t,n)
 	param1 = [i+1 for i in indexes]
-	print "\nReconstruction...\nPicking t parties at random\n-> " + tostr(param1)
+	print "\nPicking t parties at random\n-> " + tostr(param1)
 	param2 = [dec[i] for i in indexes]
 	print "Decrypted Secrets : " + conc([tostr(d) for d in dec]) + " => " + conc([tostr(d) for d in param2])
 	res = ss.PVSSReconstruct(param1, param2)
@@ -326,6 +326,8 @@ class PVSS:
 		self.publicKeys = pks
 		self.secretKeys = sks
 
+
+
 	def decryptShare(self, share, secretKey):
 		secretKey = mpz(secretKey)
 		inv = gmpy2.invert(secretKey,self.order)
@@ -340,7 +342,7 @@ class PVSS:
 		h = SHA256.new()
 		for i in range(n):
 			vArr.append(self.ec.mul(self.generatorSecondary, preSecrets[i]))
-			w = self.sample(self.prime-1)
+			w = self.sample(self.order)
 			wArr.append(w)
 			temp = (self.ec.mul(self.publicKeys[i],w),self.ec.mul(self.generatorSecondary,w))
 			#temp = (temp[0].digits(10), temp[1].digits(10))
@@ -357,42 +359,88 @@ class PVSS:
 
 		return [vArr,e,zArr]
 
-	def verifyZKP(self,shares,vArr,e,zArr):
-		print "\nVerification..."
-		self.verifyByCode(vArr)
+	def decryptWithProof(self,shares,index):
+		i = index
+		dec = self.decryptShare(shares[i], self.secretKeys[i])
+		print "Decryption (" + str(i) + ") : " + tostr(dec)
+		proof = self.generate1ZKP(self.secretKeys[i],self.generatorPrimary,self.publicKeys[i])
+		print "Proof : " + tostr(proof[0]) + ", " + tostr(proof[1]) + ", " + proof[2].digits() + ", " + proof[3].digits()
+		print "...Proof valid !" if self.verify1ZKP(proof,self.generatorPrimary,self.publicKeys[i],True) else "...Bad proof !"
+		return dec
+
+
+	def generate1ZKP(self,ex,gen1,gen2):
+		h = SHA256.new()
+		sh = self.ec.mul(gen1, ex)
+		v = self.ec.mul(gen2, ex)
+		w = self.sample(self.order)
+		
+		temp = (self.ec.mul(gen1,w),self.ec.mul(gen2,w))
+		
+		h.update(bytes(str(gen1)))
+		h.update(bytes(str(gen2)))
+		h.update(bytes(str(temp)))
+		
+		e = mpz(h.hexdigest(),base=16)
+		e = gmpy2.f_mod(e,self.order)
+		z = gmpy2.f_mod(w-ex*e, self.order)
+		return [v,sh,e,z]
+
+	def verify1ZKP(self,proof,gen1,gen2,verbal):
+		v,sh,e,z = proof
+		if verbal : print "Verifying ZKP..."
+		h = SHA256.new()
+		if verbal : print "e = " + e.digits(10) +"\nIntermediates"
+
+		temp = (self.ec.add(self.ec.mul(gen1,z),self.ec.mul(sh,e)),\
+			self.ec.add(self.ec.mul(gen2,z),self.ec.mul(v,e)))
+		if verbal : print conc([tostr(ele) for ele in temp])
+		h.update(bytes(str(gen1)))
+		h.update(bytes(str(gen2)))
+		h.update(bytes(str(temp)))
+
+		eVerify = h.hexdigest()
+		eVerify = mpz(eVerify,base=16)
+		eVerify = gmpy2.f_mod(eVerify,self.order)
+		if verbal : print "Recovered e : " + eVerify.digits(10)
+		return eVerify==e
+
+	def verifyZKP(self,shares,vArr,e,zArr,verbal):
+		if verbal : print "\nVerification..."
+		self.verifyByCode(vArr,verbal)
 		n = len(shares)
 		h = SHA256.new()
-		print "\ne = " + e.digits(10) +"\nIntermediates"
+		if verbal : print "\ne = " + e.digits(10) +"\nIntermediates"
 		for i in range(n):
 			temp = (self.ec.add(self.ec.mul(self.publicKeys[i],zArr[i]),self.ec.mul(shares[i],e)),\
 				self.ec.add(self.ec.mul(self.generatorSecondary,zArr[i]),self.ec.mul(vArr[i],e)))
-			print conc([tostr(ele) for ele in temp])
+			if verbal : print conc([tostr(ele) for ele in temp])
 			h.update(bytes(str(self.publicKeys[i])))
 			h.update(bytes(str(self.generatorSecondary)))
 			h.update(bytes(str(temp)))
 		eVerify = h.hexdigest()
 		eVerify = mpz(eVerify,base=16)
 		eVerify = gmpy2.f_mod(eVerify,self.order)
-		print "Recovered e : " + eVerify.digits(10)
+		if verbal : print "Recovered e : " + eVerify.digits(10)
 		return eVerify==e
 
-	def verifyByCode(self,vArr):
+	def verifyByCode(self,vArr,verbal):
 		randomVec = [int(gmpy2.mpz_random(self.rs,self.order)) for i in range(self.n-self.t)]
 		codewordInDual = self.code.getCodewordInDual(randomVec)
 		codewordInDual = [gmpy2.f_mod(mpz(int(ele)),self.order) for ele in codewordInDual]
-		print "Random codeword from dual : " + tostr(codewordInDual)
-		print "Intermediates"
+		if verbal : print "Random codeword from dual : " + tostr(codewordInDual)
+		if verbal : print "Intermediates"
 
 		product = (mpz(-1),mpz(-1))
 		for vi,ci in zip(vArr,codewordInDual):
 			temp = self.ec.mul(vi,ci)
-			print str(ci) + " x " + tostr(vi) + " = " + tostr(temp)
+			if verbal : print str(ci) + " x " + tostr(vi) + " = " + tostr(temp)
 			product = self.ec.add(product,temp)
-		print "Product : " + tostr(product)
+		if verbal : print "Product : " + tostr(product)
 		if product[0] == -1:
-			print "...Codeword valid : v"
+			if verbal : print "...Codeword valid : v"
 		else:
-			print "...Bad codeword : v"
+			if verbal : print "...Bad codeword : v"
 
 
 if __name__=="__main__":
