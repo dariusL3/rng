@@ -71,7 +71,7 @@ class dummyEC:
 			if y1 == y2 and y1 != 0:
 				m = gmpy2.f_mod((3*x1*x1+self.a)*gmpy2.invert(2*y2,self.p),self.p)
 			else:
-				return (-1,-1)
+				return (mpz(-1),mpz(-1))
 		else:
 			m = gmpy2.f_mod((y2-y1) * gmpy2.invert(x2-x1,self.p),self.p)
 		x = gmpy2.f_mod(m*m-x1-x2,self.p)
@@ -81,8 +81,8 @@ class dummyEC:
 	def mul(self,p1,k):
 		#print p1
 		#print k
-		if k==0:
-			return (-1,-1)
+		if k==0 or p1[0] == -1:
+			return (mpz(-1),mpz(-1))
 		temp = p1
 		for i in range(k-1):
 			temp = self.add(temp,p1)

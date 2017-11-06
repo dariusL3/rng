@@ -1,3 +1,12 @@
+# 6/11:
+	- added a simple implementation for Reed-Solomon code (for verification phase)
+	- mainly manipulates the matrices G and H, using SymPy library
+	- note that SymPy does not come with mpz support or Zp-typed elements, so it should only be used for small numbers
+
+# 3/11:
+	- computations now take place on an elliptic curve group with prime order
+	- new implementation class : dummyEC. It is used for giving small-sized demonstrations. Need to switch to an ECC library for practical use
+
 # 9/10:
 	- added some comments (function description)
 	- the protocol now adopts implementations of several algorithms in V.Shoup's book

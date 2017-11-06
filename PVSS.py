@@ -5,6 +5,7 @@ import time
 import sys
 from Crypto.Hash import SHA256
 from dummyEC import dummyEC
+from rscode import RSCode
 
 #uses Miller-Rabin primality test, which is always correct when it  yields False, but has a chance to incorrectly yield True.
 #anyway, this function is not called by any other function inside the scope of this file
@@ -57,6 +58,20 @@ def organizeFacts(facs):
 			count += 1
 	return (s1,s2)
 
+def tostr(ls):
+	#print ls
+	res = "["
+	for ele in ls:
+		ele = mpz(ele)
+		res += ele.digits(10) + ", "
+	return res[:-2] + "]"
+
+def conc(ls):
+	res = ""
+	for s in ls :
+		res += s + ", "
+	return res[:-2]
+
 # returns a collection different from the input. Apply it continously starting from the smallest collection (0,1,...)
 # to obtain all collections along the way
 def nextCollection(indexes,n):
@@ -75,7 +90,7 @@ def nextCollection(indexes,n):
 		return newInd
 
 #correctness not assured, but the majority of non-generators fail this test
-#Note: no longer used
+#depecrated
 def simpleGeneratorTest(g, p):
 	if g==0: return False
 	for smallp in [2,3,5,7]:
@@ -93,28 +108,34 @@ def evaluatePoly(poly, x, modulo):
 		result = gmpy2.f_mod(result, modulo)
 	return result
 
-
 def test(args):
 	p,a,b,gx,gy,n,t,secret = [mpz(ele) for ele in args[1:9]]
 	g = (gx,gy)
 	ss = PVSS(p,a,b,g,n,t)
 	ss.generateTestKeyPairs(n)
-	shares = ss.PVSSDistribute(secret)
-	#print "Proof: "+str(proof)
-	#print ss.verifyZKP(shares,proof[0],proof[1],proof[2])
-	#print ss.generatorSecondary
-	#print pairs
+	print "Setup..."
+	print "Using Elliptic Curve : y^2 = " + a.digits(10) + "x^3 + " + b.digits(10) + " over Z" + p.digits(10)
+	print "Generators: " + tostr(ss.generatorPrimary) + " , " + tostr(ss.generatorSecondary)
+	print "Party secret keys : " + tostr(ss.secretKeys)
+	print "Party public keys : " + conc([tostr(k) for k in ss.publicKeys])
+
+	print "\nDistribution..."
+	shares,proof = ss.PVSSDistribute(secret)
+	
+	print "Proof (v): "+ conc([tostr(v) for v in proof[0]])
+	print "Proof (e): "+proof[1].digits()
+	print "Proof (z): "+tostr(proof[2])
+	print "...Proof valid !" if ss.verifyZKP(shares,proof[0],proof[1],proof[2]) else "...Bad Proof !"
+	
 
 	dec = [ss.decryptShare(shares[i], ss.secretKeys[i]) for i in range(n)] 
 	indexes = ss.getRandomCollection(t,n)
-	print "Chosen indexes: " + str(indexes)
 	param1 = [i+1 for i in indexes]
+	print "\nReconstruction...\nPicking t parties at random\n-> " + tostr(param1)
 	param2 = [dec[i] for i in indexes]
-	print "Decrypted Secrets : " + str(dec) + " => " + str(param2)
+	print "Decrypted Secrets : " + conc([tostr(d) for d in dec]) + " => " + conc([tostr(d) for d in param2])
 	res = ss.PVSSReconstruct(param1, param2)
-	print "Recovered secret: "+str(res)
-	#with open("secret.txt","r") as f:
-	#	print "Read: " +f.readline()
+	print "...Recovered secret: "+tostr(res)
 
 
 
@@ -157,6 +178,7 @@ class PVSS:
 		self.n = n
 		self.t = t
 		self.generateTestKeyPairs(n)
+		self.code = RSCode(n,t)
 
 
 	# Algorithm 11.1, V.Shoup
@@ -194,66 +216,6 @@ class PVSS:
 				result.append(num)
 		return result
 
-	# Lambda described in the Reconstruction section
-	# the result is reduced mod p-1
-	# lambda is set to zero if and only if its denominator is not invertible mod p-1
-	def computeAllLambda(self,xl):
-		n = len(xl)
-		result = []
-		for i in range(n):
-			x = xl[i]
-			lambnum = 1
-			lambden = 1
-			for otherx in xl:
-				if not otherx==x:
-					lambnum *= otherx
-					#lambnum = gmpy2.f_mod(lambnum, self.prime-1)
-					lambden *= otherx-x
-
-
-			temp = gmpy2.gcd(lambnum,lambden)
-			if lambden < 0:
-				temp = -temp
-			lambnum /= temp
-			lambden /= temp
-			lambnum = gmpy2.f_mod(lambnum, self.prime-1)
-			#print "Lambda " + str(i) + ": " + str(lambnum) + " / " + str(lambden)
-			if gmpy2.gcd(lambden,self.prime-1) == 1:
-				lamb = lambnum * gmpy2.invert(lambden,self.prime-1)
-			else:
-				lamb = 0
-			lamb = gmpy2.f_mod(lamb, self.prime-1)
-			result.append(int(lamb))
-		return result
-
-	# *Tight* set being sets of n numbers where any t-number collection, when fed to computeAllLambda(), yields no zero
-	def findTightSet(self,n,t):
-		result = []
-		print "Threshold : " + str(min(self.prime,5*n*t))
-		loopCount = 0
-		while loopCount < 1000 * gmpy2.factorial(n) / gmpy2.factorial(t):
-			loopCount += 1
-			xl = [ele+1 for ele in self.getRandomCollection(n,self.prime)]
-			b = self.assessSet(t,xl)
-			if b:
-				print "Accepted !"
-				return xl
-		return result
-
-	# returns True or False. Used as suplement for findTightSet(). Receives a t-number collection as input
-	def assessSet(self,t,xl):
-		n = len(xl)
-		print "Set: " + str(xl)
-		indexes = range(t)
-		while len(indexes) > 0:
-			coll = [xl[ind] for ind in indexes]
-			temp = self.computeAllLambda(coll)
-			if 0 in temp:
-				print "Discarded with anti-proof: " + str(coll) + " -> " + str(temp)
-				return False
-			indexes = nextCollection(indexes, n)
-		return True
-
 	def sample(self, upper):
 		result = 1
 		while result <= 1: 
@@ -275,6 +237,7 @@ class PVSS:
 			result = gmpy2.f_mod(result, modulo)
 		return result
 
+	#depecrated
 	def ShamirDistribute(self, s, n, t):
 		s = mpz(s)
 		poly = [self.sample(self.prime) for i in range(t-1)]
@@ -292,7 +255,7 @@ class PVSS:
 		n = self.n
 		t = self.t
 		secret = self.ec.mul(self.generatorPrimary, s)
-		print "Secret : " + str(secret)
+		print "Secret : " + tostr(secret)
 		poly = [self.sample(self.order) for i in range(t-1)]
 		poly.append(s)
 		preSecrets = []
@@ -303,13 +266,14 @@ class PVSS:
 			preSecrets.append(temp)
 			temp = self.ec.mul(publicKeys[i-1], temp)
 			shares.append(temp)
-		#proof = self.generateZKP(preSecrets, shares)
+		proof = self.generateZKP(preSecrets, shares)
 		
-		print "Generators: " + str(self.generatorPrimary) + " , " + str(self.generatorSecondary)
-		print "Evaluations: " + str(preSecrets)
-		print "Shares: " + str(shares)
-		return shares
+		print "Polynomial Coefficients : " + tostr(poly)
+		print "Evaluations: " + tostr(preSecrets)
+		print "...Shares: " + conc([tostr(s) for s in shares])
+		return shares, proof
 
+		#depecrated
 	def ShamirReconstruct(self, xl, yl):
 		n = len(xl)
 		result = 0
@@ -375,37 +339,61 @@ class PVSS:
 
 		h = SHA256.new()
 		for i in range(n):
-			vArr.append(gmpy2.powmod(self.generatorSecondary, preSecrets[i], self.prime))
+			vArr.append(self.ec.mul(self.generatorSecondary, preSecrets[i]))
 			w = self.sample(self.prime-1)
 			wArr.append(w)
-			temp = (gmpy2.powmod(self.publicKeys[i],w,self.prime),gmpy2.powmod(self.generatorSecondary,w,self.prime))
-			temp = (temp[0].digits(10), temp[1].digits(10))
+			temp = (self.ec.mul(self.publicKeys[i],w),self.ec.mul(self.generatorSecondary,w))
+			#temp = (temp[0].digits(10), temp[1].digits(10))
 			#print temp
-			h.update(bytes(temp[0]))
-			h.update(bytes(temp[1]))
+			h.update(bytes(str(self.publicKeys[i])))
+			h.update(bytes(str(self.generatorSecondary)))
+			h.update(bytes(str(temp)))
+			#h.update(bytes(temp[1]))
 		#print wArr
 		e = mpz(h.hexdigest(),base=16)
-		e = gmpy2.f_mod(e,self.prime-1)
+		e = gmpy2.f_mod(e,self.order)
 		
-		zArr = [gmpy2.f_mod(wArr[i]-preSecrets[i]*e, self.prime-1) for i in range(n)]
+		zArr = [gmpy2.f_mod(wArr[i]-preSecrets[i]*e, self.order) for i in range(n)]
 
 		return [vArr,e,zArr]
 
 	def verifyZKP(self,shares,vArr,e,zArr):
+		print "\nVerification..."
+		self.verifyByCode(vArr)
 		n = len(shares)
 		h = SHA256.new()
+		print "\ne = " + e.digits(10) +"\nIntermediates"
 		for i in range(n):
-			temp = (gmpy2.powmod(self.publicKeys[i],zArr[i],self.prime)*gmpy2.powmod(shares[i],e,self.prime),\
-				gmpy2.powmod(self.generatorSecondary,zArr[i],self.prime)*gmpy2.powmod(vArr[i],e,self.prime))
-			temp = (gmpy2.f_mod(temp[0],self.prime), gmpy2.f_mod(temp[1], self.prime))
-			temp = (temp[0].digits(10), temp[1].digits(10))
-			#print temp
-			h.update(bytes(temp[0]))
-			h.update(bytes(temp[1]))
-		eVerify = mpz(h.hexdigest(),base=16)
-		eVerify = gmpy2.f_mod(eVerify,self.prime-1)
-		
+			temp = (self.ec.add(self.ec.mul(self.publicKeys[i],zArr[i]),self.ec.mul(shares[i],e)),\
+				self.ec.add(self.ec.mul(self.generatorSecondary,zArr[i]),self.ec.mul(vArr[i],e)))
+			print conc([tostr(ele) for ele in temp])
+			h.update(bytes(str(self.publicKeys[i])))
+			h.update(bytes(str(self.generatorSecondary)))
+			h.update(bytes(str(temp)))
+		eVerify = h.hexdigest()
+		eVerify = mpz(eVerify,base=16)
+		eVerify = gmpy2.f_mod(eVerify,self.order)
+		print "Recovered e : " + eVerify.digits(10)
 		return eVerify==e
+
+	def verifyByCode(self,vArr):
+		randomVec = [int(gmpy2.mpz_random(self.rs,self.order)) for i in range(self.n-self.t)]
+		codewordInDual = self.code.getCodewordInDual(randomVec)
+		codewordInDual = [gmpy2.f_mod(mpz(int(ele)),self.order) for ele in codewordInDual]
+		print "Random codeword from dual : " + tostr(codewordInDual)
+		print "Intermediates"
+
+		product = (mpz(-1),mpz(-1))
+		for vi,ci in zip(vArr,codewordInDual):
+			temp = self.ec.mul(vi,ci)
+			print str(ci) + " x " + tostr(vi) + " = " + tostr(temp)
+			product = self.ec.add(product,temp)
+		print "Product : " + tostr(product)
+		if product[0] == -1:
+			print "...Codeword valid : v"
+		else:
+			print "...Bad codeword : v"
+
 
 if __name__=="__main__":
 	test(sys.argv)

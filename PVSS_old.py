@@ -4,6 +4,7 @@ from gmpy2 import mpz
 import time
 import sys
 from Crypto.Hash import SHA256
+from dummyEC import dummyEC
 
 #uses Miller-Rabin primality test, which is always correct when it  yields False, but has a chance to incorrectly yield True.
 #anyway, this function is not called by any other function inside the scope of this file
@@ -71,7 +72,6 @@ def nextCollection(indexes,n):
 		for i in range(k-cur,k):
 			newInd[i] = val
 			val += 1
-		#print newInd
 		return newInd
 
 #correctness not assured, but the majority of non-generators fail this test
@@ -84,31 +84,44 @@ def simpleGeneratorTest(g, p):
 				return False
 	return True
 
+def evaluatePoly(poly, x, modulo):
+	result = mpz('0')
+	for coef in poly:
+		result *= x
+		result = gmpy2.f_mod(result, modulo)
+		result += coef
+		result = gmpy2.f_mod(result, modulo)
+	return result
+
+
 def test(args):
-	p,n,t,secret = [mpz(ele) for ele in args[1:5]]
-	ss = PVSS(p,1)
-	pairs = ss.generateTestKeyPairs(n)
-	[shares,proof,allX] = ss.PVSSDistribute(secret, n,t)
+	p,a,b,gx,gy,n,t,secret = [mpz(ele) for ele in args[1:9]]
+	g = (gx,gy)
+	ss = PVSS(p,a,b,g,n,t)
+	ss.generateTestKeyPairs(n)
+	shares = ss.PVSSDistribute(secret)
 	#print "Proof: "+str(proof)
 	#print ss.verifyZKP(shares,proof[0],proof[1],proof[2])
 	#print ss.generatorSecondary
 	#print pairs
 
-	dec = [ss.decryptShare(shares[i], pairs[i][0]) for i in range(n)] 
+	dec = [ss.decryptShare(shares[i], ss.secretKeys[i]) for i in range(n)] 
 	indexes = ss.getRandomCollection(t,n)
 	print "Chosen indexes: " + str(indexes)
-	param1 = [allX[i] for i in indexes]
+	param1 = [i+1 for i in indexes]
 	param2 = [dec[i] for i in indexes]
 	print "Decrypted Secrets : " + str(dec) + " => " + str(param2)
 	res = ss.PVSSReconstruct(param1, param2)
 	print "Recovered secret: "+str(res)
-	with open("secret.txt","r") as f:
-		print "Read: " +f.readline()
+	#with open("secret.txt","r") as f:
+	#	print "Read: " +f.readline()
 
 
 
 class PVSS:
+	#depecrated
 	def __init__(self,p,method):
+		self.order = 0
 		if method == 0:
 			self.prime = mpz(p)
 			self.rs = gmpy2.random_state(gmpy2.f_mod(mpz(time.time()),self.prime))
@@ -128,6 +141,22 @@ class PVSS:
 			self.generatorSecondary = self.generatorPrimary
 			while self.generatorSecondary == self.generatorPrimary:
 				self.generatorSecondary = self.findGenerator()
+
+	def __init__(self,p_in,a_in,b_in,g_in,n,t):
+		self.publicKeys = []
+		self.secretKeys = []
+		self.prime = mpz(p_in)
+		self.rs = gmpy2.random_state(gmpy2.f_mod(mpz(time.time()),self.prime))
+		self.ec = dummyEC(a_in,b_in,p_in)
+		self.ec.setGenerator(g_in)
+		self.order = self.ec.q
+		self.generatorPrimary = self.samplePoint()
+		self.generatorSecondary = self.generatorPrimary
+		while self.generatorSecondary == self.generatorPrimary:
+			self.generatorSecondary = self.samplePoint()
+		self.n = n
+		self.t = t
+		self.generateTestKeyPairs(n)
 
 
 	# Algorithm 11.1, V.Shoup
@@ -231,6 +260,11 @@ class PVSS:
 			result = gmpy2.mpz_random(self.rs, upper)
 			return result
 
+	def samplePoint(self):
+		if self.ec:
+			ind = gmpy2.mpz_random(self.rs, self.order-1)
+		return self.ec.field[ind]
+
 	#polynomial is a list of coefficients with descending degree
 	def evaluatePoly(self,poly, x, modulo):
 		result = mpz('0')
@@ -252,35 +286,29 @@ class PVSS:
 			result.append(share)
 		return result
 
-	def PVSSDistribute(self, s, n, t):
+	def PVSSDistribute(self, s):
 		publicKeys = self.publicKeys
 		s = mpz(s)
-		secret = gmpy2.powmod(self.generatorPrimary, s, self.prime)
-		with open("secret.txt","w") as f:
-			f.write(secret.digits(10)+"\n")
-		poly = [self.sample(self.prime) for i in range(t-1)]
+		n = self.n
+		t = self.t
+		secret = self.ec.mul(self.generatorPrimary, s)
+		print "Secret : " + str(secret)
+		poly = [self.sample(self.order) for i in range(t-1)]
 		poly.append(s)
 		preSecrets = []
 		shares = []
-		allX = self.findTightSet(n,t)
-		if len(allX) == 0:
-			print "Error !"
-			return []
-		shareCount = 0
-		x = 0
-		loopCount = 0
-		for i in range(n):
-			temp = self.evaluatePoly(poly, allX[i], self.prime-1)
+		
+		for i in range(1,n+1):
+			temp = self.evaluatePoly(poly, i, self.order)
 			preSecrets.append(temp)
-			temp = gmpy2.powmod(publicKeys[i], temp, self.prime)
+			temp = self.ec.mul(publicKeys[i-1], temp)
 			shares.append(temp)
-		proof = self.generateZKP(preSecrets, shares)
-		print "Prime facts: " + str([self.prime,self.facs,self.exes])
+		#proof = self.generateZKP(preSecrets, shares)
+		
 		print "Generators: " + str(self.generatorPrimary) + " , " + str(self.generatorSecondary)
 		print "Evaluations: " + str(preSecrets)
 		print "Shares: " + str(shares)
-		print "X list: " + str(allX)
-		return [shares, proof, allX]
+		return shares
 
 	def ShamirReconstruct(self, xl, yl):
 		n = len(xl)
@@ -302,59 +330,42 @@ class PVSS:
 		return gmpy2.f_mod(result, self.prime)
 
 	def PVSSReconstruct(self, xl, dSecrets):
-		t = len(xl)
-		result = 1
-		for i in range(t):
-			x = xl[i]
+		t = self.t
+		result = (-1,-1)
+		for x,d in zip(xl,dSecrets):
 			lambnum = 1
 			lambden = 1
 			for otherx in xl:
 				if not otherx==x:
 					lambnum *= otherx
-					
 					lambden *= otherx-x
 					
-
-			temp = gmpy2.gcd(lambnum,lambden)
-			if lambden < 0:
-				temp = -temp
-			lambnum /= temp
-			lambden /= temp
-			lambnum = gmpy2.f_mod(lambnum, self.prime-1)
-			#lambden = gmpy2.f_mod(lambden, self.prime-1)
-			
-			if gmpy2.gcd(lambden,self.prime-1) == 1:
-				lamb = lambnum * gmpy2.invert(lambden,self.prime-1)
-			else:
-				lamb = 0
-			lamb = gmpy2.f_mod(lamb, self.prime-1)
+			lamb = lambnum * gmpy2.invert(lambden,self.order)
+			lamb = gmpy2.f_mod(lamb, self.order)
 			print "Lambda (" + str(x) + ") : " + str(lamb)
-			temp = gmpy2.powmod(dSecrets[i],lamb, self.prime)
-			result = gmpy2.f_mod(temp*result, self.prime)
+			temp = self.ec.mul(d,lamb)
+			result = self.ec.add(result, temp)
 		return result
 
 	def generateKeyPair(self):
-		secretKey = self.prime-1
-		while not gmpy2.gcd(secretKey, self.prime-1) == 1:
-			secretKey = self.sample(self.prime-1)
-		publicKey = gmpy2.powmod(self.generatorPrimary, secretKey, self.prime)
+		secretKey = self.sample(self.order-1)+1
+		publicKey = self.ec.mul(self.generatorPrimary, secretKey)
 		return [secretKey, publicKey]
 
 	def generateTestKeyPairs(self, n):
-		pairs = []
+		sks = []
 		pks = []
 		for i in range(n):
 			p = self.generateKeyPair()
-			pairs.append(p)
+			sks.append(p[0])
 			pks.append(p[1])
 		self.publicKeys = pks
-		return pairs
+		self.secretKeys = sks
 
 	def decryptShare(self, share, secretKey):
-		share = mpz(share)
 		secretKey = mpz(secretKey)
-		inv = gmpy2.invert(secretKey,self.prime-1)
-		result = gmpy2.powmod(share,inv,self.prime)
+		inv = gmpy2.invert(secretKey,self.order)
+		result = self.ec.mul(share,inv)
 		return result
 
 	def generateZKP(self,preSecrets,shares):
