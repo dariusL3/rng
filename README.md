@@ -1,3 +1,7 @@
+# 20/11:
+	- added practical implementation of PVSS
+	- uses secp256k1 curve (to match major cryptocurrencies')
+
 # 6/11:
 	- added implementation for SCRAPE protocol
 	- added reconstructing party's proof in PVSS
