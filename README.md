@@ -1,6 +1,11 @@
+# 17/1:
+	- added an implementation of SCRAPE as contract
+	- heavy computations are in the form of pure / view functions (which makes them effectively client-side, see "Solidity function types" for clarification)
+	- added a runtime transcript (log)
+
 # 20/11:
-	- added practical implementation of PVSS
-	- uses secp256k1 curve (to match major cryptocurrencies')
+	- added actual-elliptic-curve implementation of PVSS
+	- uses secp256k1 curve (to match major cryptocurrencies)
 
 # 6/11:
 	- added implementation for SCRAPE protocol
