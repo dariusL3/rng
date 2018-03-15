@@ -1,3 +1,9 @@
+# 15/3:
+	- updated smart contract code
+	- uploaded private net folder used for testing - extended from Vincent Chu's github project (https://github.com/vincentchu/eth-private-net)
+	- functionalities all added (and working properly) except for coding-theory-based verification
+	- for now, tests have been done for up to 6 parties, all with valid results (in various possible scenarios)
+
 # 17/1:
 	- added an implementation of SCRAPE as contract
 	- heavy computations are in the form of pure / view functions (which makes them effectively client-side, see "Solidity function types" for clarification)
