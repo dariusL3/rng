@@ -1,0 +1,10 @@
+Starting node for lily on port: 40303, RPC port: 8103. Console logs sent to ./lily/console.log
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.7.3-stable/linux-amd64/go1.9.1
+coinbase: 0xb1b6a66a410edc72473d92decb3772bad863e243
+at block: 3298 (Tue, 13 Mar 2018 14:22:18 +07)
+ datadir: /home/lt048/Downloads/eth-private-net/lily
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 scr2:1.0 txpool:1.0 web3:1.0
+
+> 
