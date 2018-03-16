@@ -1,0 +1,7 @@
+- need to turn on corsE inside firefox because the web is an asshole
+- pvss contract is ready. If debugging, hook the Remix instance to Geth using the rpc port
+- also need to enable cors inside Geth. The flags are ready in eth-private-net.js
+- need the server : fire up http-server -c-1 --cors ./
+c=-1 means cache is disabled
+- Remix might have to exclude SSL
+- Metamask transaction signing operates unexpectedly on private net -> have to manage accounts oneself
