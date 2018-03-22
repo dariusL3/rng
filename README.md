@@ -1,3 +1,8 @@
+# 22/3:
+	- redesigned interfacce
+	- properly implemented client-side entropy sampling (crypto.getRandomValues)
+	- dapp functioning correctly
+
 # 15/3:
 	- updated smart contract code
 	- uploaded private net folder used for testing - extended from Vincent Chu's github project (https://github.com/vincentchu/eth-private-net)
