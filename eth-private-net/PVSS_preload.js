@@ -313,6 +313,7 @@ function listenAll(){
         }
         var beacon = scr.computeBeacon.call(bundle)
         console.log('Beacon : ' + beacon)
+        resetLocalStorage()
         return
       }
     }
