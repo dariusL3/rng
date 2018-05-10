@@ -5,3 +5,14 @@
 c=-1 means cache is disabled
 - Remix might have to exclude SSL
 - Metamask transaction signing operates unexpectedly on private net -> have to manage accounts oneself
+
+function unlock(addr){
+  //console.log(addr)
+  if (addr !== undefined){
+    myAddr = addr
+    web3.personal.unlockAccount(addr,'foobar123')
+  }
+}
+
+var arr = new Uint32Array(8)
+crypto.getRandomValues(arr)
