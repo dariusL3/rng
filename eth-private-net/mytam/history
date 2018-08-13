@@ -1,0 +1,1295 @@
+miner.start()
+miner.stop
+miner.stop()
+miner.stop
+miner.start()
+miner.stop()
+miner.start()
+var browser_ballot_sol_p256k1curveContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"base1x","type":"uint256"},{"name":"base1y","type":"uint256"},{"name":"base2x","type":"uint256"},{"name":"base2y","type":"uint256"},{"name":"pow1x","type":"uint256"},{"name":"pow1y","type":"uint256"},{"name":"pow2x","type":"uint256"},{"name":"pow2y","type":"uint256"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
+var browser_ballot_sol_p256k1curve = browser_ballot_sol_p256k1curveContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x6060604052341561000f57600080fd5b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f600081905550600060018190555060076002819055507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd03641416003819055507f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f817986004819055507f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8600581905550610888806100ca6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063338255f31461007d57806372939df9146100bd578063b22667d114610101578063d89adb1d1461018d578063e022d77c146101d4578063e91cac2d1461022d575b600080fd5b341561008857600080fd5b6100a7600480803590602001909190803590602001909190505061027d565b6040518082815260200191505060405180910390f35b34156100c857600080fd5b6100e7600480803590602001909190803590602001909190505061031c565b604051808215151515815260200191505060405180910390f35b341561010c57600080fd5b610173600480803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190505061032b565b604051808215151515815260200191505060405180910390f35b341561019857600080fd5b6101b76004808035906020019091908035906020019091905050610647565b604051808381526020018281526020019250505060405180910390f35b34156101df57600080fd5b61021060048080359060200190919080359060200190919080359060200190919080359060200190919050506106bd565b604051808381526020018281526020019250505060405180910390f35b341561023857600080fd5b610260600480803590602001909190803590602001909190803590602001909190505061079a565b604051808381526020018281526020019250505060405180910390f35b6000806000806000806000806000808a98508b9750600196506000955060009450600193506000925060009150600090505b60008814151561030a5787898115156102c457fe5b0460038190555087898115156102d657fe5b0690508798508591508392508097508a8b60035488098c03880895508196508a8b60035486098c03860893508294506102af565b84995050505050505050505092915050565b60008082841714905092915050565b6000610335610834565b6103408b8b8b61079a565b82600060078110151561034f57fe5b6020020183600160078110151561036257fe5b602002018281525082815250505061037b8c858561079a565b82600460078110151561038a57fe5b6020020183600560078110151561039d57fe5b60200201828152508281525050506104038160006007811015156103bd57fe5b60200201518260016007811015156103d157fe5b60200201518360046007811015156103e557fe5b60200201518460056007811015156103f957fe5b60200201516106bd565b82600060078110151561041257fe5b6020020183600160078110151561042557fe5b602002018281525082815250505061043e8b898961079a565b82600260078110151561044d57fe5b6020020183600360078110151561046057fe5b60200201828152508281525050506104798c878761079a565b82600460078110151561048857fe5b6020020183600560078110151561049b57fe5b60200201828152508281525050506105018160026007811015156104bb57fe5b60200201518260036007811015156104cf57fe5b60200201518360046007811015156104e357fe5b60200201518460056007811015156104f757fe5b60200201516106bd565b82600260078110151561051057fe5b6020020183600360078110151561052357fe5b60200201828152508281525050508585858584600060078110151561054457fe5b602002015185600160078110151561055857fe5b602002015186600260078110151561056c57fe5b602002015187600360078110151561058057fe5b602002015160405180898152602001888152602001878152602001868152602001858152602001848152602001838152602001828152602001985050505050505050506040518091039020600190048160066007811015156105de57fe5b6020020181815250506003548160066007811015156105f957fe5b602002015181151561060757fe5b0681600660078110151561061757fe5b6020020181815250508b81600660078110151561063057fe5b6020020151149150509a9950505050505050505050565b600080600080600080546106636000548860020960005461027d565b6000546000548a6000548c6003090960015408099250600054600054886000540389600054030860005485860908915060005460005460005489600054038508850987086000540390508181945094505050509250929050565b60008060008060006106cf898961031c565b156106df5786869450945061078e565b6106e9878761031c565b156106f95788889450945061078e565b8689141561072e578588141561071c576107138989610647565b9450945061078e565b6000808191508090509450945061078e565b60005461074660005489600054038c0860005461027d565b60005488600054038b0809925060005460005488600054038b60005403086000548586090891506000546000546000548b600054038508850989086000540390508181945094505b50505094509492505050565b6000806000806000806000809450600093508992508891508790505b60018314151561080d5760006002848115156107ce57fe5b061415156107eb576107e2858584846106bd565b80955081965050505b6107f58282610647565b80925081935050506001839060020a900492506107b6565b610819858584846106bd565b80955081965050508484965096505050505050935093915050565b60e0604051908101604052806007905b600081526020019060019003908161084457905050905600a165627a7a72305820d5f8bd956d8ba75967fd7574b83eb2a52a85af22d6f8b34a24d427df89400f920029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })
+var browser_ballot_sol_p256k1curve = browser_ballot_sol_p256k1curveContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x6060604052341561000f57600080fd5b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f600081905550600060018190555060076002819055507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd03641416003819055507f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f817986004819055507f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8600581905550610888806100ca6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063338255f31461007d57806372939df9146100bd578063b22667d114610101578063d89adb1d1461018d578063e022d77c146101d4578063e91cac2d1461022d575b600080fd5b341561008857600080fd5b6100a7600480803590602001909190803590602001909190505061027d565b6040518082815260200191505060405180910390f35b34156100c857600080fd5b6100e7600480803590602001909190803590602001909190505061031c565b604051808215151515815260200191505060405180910390f35b341561010c57600080fd5b610173600480803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190505061032b565b604051808215151515815260200191505060405180910390f35b341561019857600080fd5b6101b76004808035906020019091908035906020019091905050610647565b604051808381526020018281526020019250505060405180910390f35b34156101df57600080fd5b61021060048080359060200190919080359060200190919080359060200190919080359060200190919050506106bd565b604051808381526020018281526020019250505060405180910390f35b341561023857600080fd5b610260600480803590602001909190803590602001909190803590602001909190505061079a565b604051808381526020018281526020019250505060405180910390f35b6000806000806000806000806000808a98508b9750600196506000955060009450600193506000925060009150600090505b60008814151561030a5787898115156102c457fe5b0460038190555087898115156102d657fe5b0690508798508591508392508097508a8b60035488098c03880895508196508a8b60035486098c03860893508294506102af565b84995050505050505050505092915050565b60008082841714905092915050565b6000610335610834565b6103408b8b8b61079a565b82600060078110151561034f57fe5b6020020183600160078110151561036257fe5b602002018281525082815250505061037b8c858561079a565b82600460078110151561038a57fe5b6020020183600560078110151561039d57fe5b60200201828152508281525050506104038160006007811015156103bd57fe5b60200201518260016007811015156103d157fe5b60200201518360046007811015156103e557fe5b60200201518460056007811015156103f957fe5b60200201516106bd565b82600060078110151561041257fe5b6020020183600160078110151561042557fe5b602002018281525082815250505061043e8b898961079a565b82600260078110151561044d57fe5b6020020183600360078110151561046057fe5b60200201828152508281525050506104798c878761079a565b82600460078110151561048857fe5b6020020183600560078110151561049b57fe5b60200201828152508281525050506105018160026007811015156104bb57fe5b60200201518260036007811015156104cf57fe5b60200201518360046007811015156104e357fe5b60200201518460056007811015156104f757fe5b60200201516106bd565b82600260078110151561051057fe5b6020020183600360078110151561052357fe5b60200201828152508281525050508585858584600060078110151561054457fe5b602002015185600160078110151561055857fe5b602002015186600260078110151561056c57fe5b602002015187600360078110151561058057fe5b602002015160405180898152602001888152602001878152602001868152602001858152602001848152602001838152602001828152602001985050505050505050506040518091039020600190048160066007811015156105de57fe5b6020020181815250506003548160066007811015156105f957fe5b602002015181151561060757fe5b0681600660078110151561061757fe5b6020020181815250508b81600660078110151561063057fe5b6020020151149150509a9950505050505050505050565b600080600080600080546106636000548860020960005461027d565b6000546000548a6000548c6003090960015408099250600054600054886000540389600054030860005485860908915060005460005460005489600054038508850987086000540390508181945094505050509250929050565b60008060008060006106cf898961031c565b156106df5786869450945061078e565b6106e9878761031c565b156106f95788889450945061078e565b8689141561072e578588141561071c576107138989610647565b9450945061078e565b6000808191508090509450945061078e565b60005461074660005489600054038c0860005461027d565b60005488600054038b0809925060005460005488600054038b60005403086000548586090891506000546000546000548b600054038508850989086000540390508181945094505b50505094509492505050565b6000806000806000806000809450600093508992508891508790505b60018314151561080d5760006002848115156107ce57fe5b061415156107eb576107e2858584846106bd565b80955081965050505b6107f58282610647565b80925081935050506001839060020a900492506107b6565b610819858584846106bd565b80955081965050508484965096505050505050935093915050565b60e0604051908101604052806007905b600081526020019060019003908161084457905050905600a165627a7a72305820d5f8bd956d8ba75967fd7574b83eb2a52a85af22d6f8b34a24d427df89400f920029', 
+     gas: '400000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })
+miner.start
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+var con = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var ins = con.at('0x2462fe786b651f19e43ba6c287da50c1790805a9')
+ins.register('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336')
+ins.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+ins.getN.call()
+ins.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+ins.getN.call()
+var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+var listeners = [con.RegisterReady({}), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+con
+var l = con.RegisterReady()
+var l = con.RegisterReady({})
+con = ins
+var listeners = [con.RegisterReady({}), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+var lis = ins.RegisterReady({})
+lis.watch(function(err,res){if (err) return; console.log('Reg');})
+listeners[0].watch(function(err, result) {  
+    if (err) {    
+        console.log(err)    
+        return;  
+    }  
+    console.log('Event : Register Ready')
+})
+listeners[1].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Decryption')
+})
+listeners[2].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit Ready')
+})
+listeners[3].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open Ready')
+})
+listeners[4].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Public Key')
+})
+listeners[5].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Share')
+})
+listeners[6].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit')
+})
+listeners[7].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open')
+})
+ins.register('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336')
+ins.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con=conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+listeners[0].watch(function(err, result) {  
+    if (err) {    
+        console.log(err)    
+        return;  
+    }  
+    console.log('Event : Register Ready')
+})
+listeners[1].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Decryption')
+})
+listeners[2].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit Ready')
+})
+listeners[3].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open Ready')
+})
+listeners[4].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Public Key')
+})
+listeners[5].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Share')
+})
+listeners[6].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit')
+})
+listeners[7].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open')
+})
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+require
+require('PVSS_reload.js')
+require('/media/mrdat/Storage Drive/eth-private-net/PVSS_reload.js')
+require('/media/mrdat/Storage\ Drive/eth-private-net/PVSS_reload.js')
+require('PVSS_reload')
+var pks = []
+var addressMap = {}
+function listenAll(){
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+listeners[0].watch(function(err, result) {  
+    if (err) {    
+        console.log(err)    
+        return;  
+    }  
+    console.log('Event : Register Ready')
+})
+listeners[1].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Decryption')
+})
+listeners[2].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit Ready')
+})
+listeners[3].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open Ready')
+})
+listeners[4].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Public Key '+result[0]+result[1]+result[2]);
+  addressMap[result[0]] = pks.length;
+  pks.push({'x':result[1], 'y': result[2]});
+})
+listeners[5].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Share')
+})
+listeners[6].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Commit')
+})
+listeners[7].watch(function(err, result) {
+  if (err) {
+    console.log(err)
+    return;
+  }
+  console.log('Event : Open')
+})
+}
+ins
+con
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+var pks = []
+var addressMap = {}
+function listenAll(){
+  var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+  var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result[0]+result[1]+result[2]);
+    addressMap[result[0]] = pks.length;
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+var pks = []
+var addressMap = {}
+function listenAll(){
+  var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+  var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result['index']+result['partyAddress']+result['x']+result['y']);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+var pks = []
+var addressMap = {}
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result['index']+result['partyAddress']+result['x']+result['y']);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.'index');
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.index);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.args.index);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.args);
+    addressMap[result[0]] = result['index'];
+    pks.push({'x':result[1], 'y': result[2]});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.args.index+','+result.args.partyAddress+','+result.args.x+','+result.args.y);
+    addressMap[result.args.partyAddress] = result.args.index;
+    pks.push({'x':result.args.x, 'y': result.args.y});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+var pks = []
+var addressMap = {}
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.args.index+','+result.args.partyAddress+','+result.args.x+','+result.args.y);
+    addressMap[result.args.partyAddress] = result.args.index;
+    pks.push({'x':result.args.x, 'y': result.args.y});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+con.register.sendTransaction('111404123823024420405654389878791992909157872878587509356082040888874853226335', '14011790066233429123683393971594060928059251694535148197350599872398396102336',{from:bob,value:0})
+con.register.sendTransaction('14804850560488913728273765817723921422021085141445436040423853557391441149379', '48436953407887445621890608128459643542635673044771063552953848803630081440928',{from:bob,value:0})
+arrayOfStuff = ['34772521793302182986451243176193986207414529206890353029197029729309620819741', '100189241954701278789352169960596919536065870376729370844632733970615582338725', '94091396045760285365128875343275662687556485068585467123307424667545095329315', '106881602860219715939968759067355735077391305911584764187965463435139246313960', '88576436946466256675084543645139846213486627945467547568698383856562552206968', '44677027077314333112046473887135682844554390218143784936256366651540270624745', '87787884399354903247920489603571832690336530433286164096880741153450657561164', '49420600347759085865022052271376963175369465754489590213858654701396148318958']
+for (int i=0;i<4;i++){con.register.sendTransaction(arrayOfStuff[2*i],arrayOfStuff[2*i+1],{from:bob,value:0})
+}
+for (i=0;i<4;i++){con.register.sendTransaction(arrayOfStuff[2*i],arrayOfStuff[2*i+1],{from:bob,value:0});}
+var pks = []
+var addressMap = {}
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+var sks = ['23729686430471474665028963781270542949392357800926127418281145529763290269226', '62938281150811623687266951480678035234964384494475466853359337797946206621653', '52142278597844297784492602082913737415963648415606110279710404758220024324629', '4964866513109948150107856446081734846191697543369454747009359413204953833110']
+function registerPKs(){
+var arrayOfStuff = ['34772521793302182986451243176193986207414529206890353029197029729309620819741', '100189241954701278789352169960596919536065870376729370844632733970615582338725', '94091396045760285365128875343275662687556485068585467123307424667545095329315', '106881602860219715939968759067355735077391305911584764187965463435139246313960', '88576436946466256675084543645139846213486627945467547568698383856562552206968', '44677027077314333112046473887135682844554390218143784936256366651540270624745', '87787884399354903247920489603571832690336530433286164096880741153450657561164', '49420600347759085865022052271376963175369465754489590213858654701396148318958'];
+for (i=0;i<4;i++){con.register.sendTransaction(arrayOfStuff[2*i],arrayOfStuff[2*i+1],{from:bob,value:0});}
+}
+var pks = []
+var addressMap = {}
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256[]"},{"name":"comm","type":"bytes32"},{"name":"pows","type":"uint256[]"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var con = conabi.at('0xf3389ac37285e4db04978a1acd8926bc0c4d1aef')
+var sks = ['23729686430471474665028963781270542949392357800926127418281145529763290269226', '62938281150811623687266951480678035234964384494475466853359337797946206621653', '52142278597844297784492602082913737415963648415606110279710404758220024324629', '4964866513109948150107856446081734846191697543369454747009359413204953833110']
+function registerPKs(){
+var arrayOfStuff = ['34772521793302182986451243176193986207414529206890353029197029729309620819741', '100189241954701278789352169960596919536065870376729370844632733970615582338725', '94091396045760285365128875343275662687556485068585467123307424667545095329315', '106881602860219715939968759067355735077391305911584764187965463435139246313960', '88576436946466256675084543645139846213486627945467547568698383856562552206968', '44677027077314333112046473887135682844554390218143784936256366651540270624745', '87787884399354903247920489603571832690336530433286164096880741153450657561164', '49420600347759085865022052271376963175369465754489590213858654701396148318958'];
+for (i=0;i<4;i++){con.register.sendTransaction(arrayOfStuff[2*i],arrayOfStuff[2*i+1],{from:bob,value:0});}
+}
+function listenAll(){
+  var listeners = [con.RegisterReady(), con.Decryption(), con.CommitReady(), con.OpenReady(), con.PublicKey(), con.Share(), con.Commit(), con.Open()]
+  listeners[0].watch(function(err, result) {  
+      if (err) {    
+          console.log(err)    
+          return;  
+      }  
+      console.log('Event : Register Ready')
+  })
+  listeners[1].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Decryption')
+  })
+  listeners[2].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit Ready')
+  })
+  listeners[3].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open Ready')
+  })
+  listeners[4].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Public Key '+result.args.index+','+result.args.partyAddress+','+result.args.x+','+result.args.y);
+    addressMap[result.args.partyAddress] = result.args.index;
+    pks.push({'x':result.args.x, 'y': result.args.y});
+  })
+  listeners[5].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Share')
+  })
+  listeners[6].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Commit')
+  })
+  listeners[7].watch(function(err, result) {
+    if (err) {
+      console.log(err)
+      return;
+    }
+    console.log('Event : Open')
+  })
+}
+listenAll()
+registerPKs()
+function registerPKs(){
+unlock()
+var arrayOfStuff = ['34772521793302182986451243176193986207414529206890353029197029729309620819741', '100189241954701278789352169960596919536065870376729370844632733970615582338725', '94091396045760285365128875343275662687556485068585467123307424667545095329315', '106881602860219715939968759067355735077391305911584764187965463435139246313960', '88576436946466256675084543645139846213486627945467547568698383856562552206968', '44677027077314333112046473887135682844554390218143784936256366651540270624745', '87787884399354903247920489603571832690336530433286164096880741153450657561164', '49420600347759085865022052271376963175369465754489590213858654701396148318958'];
+for (i=0;i<4;i++){con.register.sendTransaction(arrayOfStuff[2*i],arrayOfStuff[2*i+1],{from:bob,value:0});}
+}
+registerPKs()
+pks
+pks[0].x
+str(pks[0].x)
+typeof(pks[0].x)
+toBigNumber
+web3.toBigNumber(pks[0].x)
+function makeCommit(){
+unlock()
+for (i=0;i<4;i++){
+var sec = web3.sha3(sks[i],1)
+var w = web3.sha3(sks[i],2)
+sec = con.computeShareAndProof(sec,pks[i].x,pks[i].y,w)
+}
+}
+makeCommit()
+function makeCommit(){
+unlock()
+for (i=0;i<4;i++){
+var sec = web3.sha3(sks[i],1)
+var w = web3.sha3(sks[i],2)
+var e,z,shx,shy,vx,vy = con.computeShareAndProof(sec,pks[i].x,pks[i].y,w)
+console.log(shx + ',' + shy)
+var comm = web3.sha3(sec)
+console.log(comm)
+}
+}
+makeCommit()
+i = 0
+var bundle = con.computeShareAndProof(sec,pks[i].x,pks[i].y,w)
+var sec = web3.sha3(sks[i],1)
+var w = web3.sha3(sks[i],2)
+var bundle = con.computeShareAndProof(sec,pks[i].x,pks[i].y,w)
+bundle
+function makeCommit(){
+unlock()
+for (i=0;i<4;i++){
+var sec = web3.sha3(sks[i],1)
+var w = web3.sha3(sks[i],2)
+var e = []
+var z = []
+var pows = []
+for (j=0lj<4;j++){
+var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+e.push(bundle[0])
+z.push(bundle[1])
+pows.push(bundle[2])
+pows.push(bundle[3])
+pows.push(bundle[4])
+pows.push(bundle[5])
+console.log('PVSS : '+bundle)
+}
+var comm = web3.sha3(sec)
+con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+console.log(comm)
+}
+}
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0lj<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0])
+      z.push(bundle[1])
+      pows.push(bundle[2])
+      pows.push(bundle[3])
+      pows.push(bundle[4])
+      pows.push(bundle[5])
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+    console.log(comm)
+  }
+}
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0])
+      z.push(bundle[1])
+      pows.push(bundle[2])
+      pows.push(bundle[3])
+      pows.push(bundle[4])
+      pows.push(bundle[5])
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+    console.log(comm)
+  }
+}
+makeCommit()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0])
+      z.push(bundle[1])
+      pows.push(bundle[2])
+      pows.push(bundle[3])
+      pows.push(bundle[4])
+      pows.push(bundle[5])
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    console.log(e)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+    console.log(comm)
+  }
+}
+makeCommit()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0].toString(10))
+      z.push(bundle[1].toString(10))
+      pows.push(bundle[2])
+      pows.push(bundle[3])
+      pows.push(bundle[4])
+      pows.push(bundle[5])
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    console.log(e)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+    console.log(comm)
+  }
+}
+makeCommit()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0].toString(10))
+      z.push(bundle[1].toString(10))
+      pows.push(bundle[2].toString(10))
+      pows.push(bundle[3].toString(10))
+      pows.push(bundle[4].toString(10))
+      pows.push(bundle[5].toString(10))
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    console.log(e)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+    console.log(comm)
+  }
+}
+makeCommit()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0].toString(10))
+      z.push(bundle[1].toString(10))
+      pows.push(bundle[2].toString(10))
+      pows.push(bundle[3].toString(10))
+      pows.push(bundle[4].toString(10))
+      pows.push(bundle[5].toString(10))
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec)
+    console.log(comm)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+  }
+}
+makeCommit()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0].toString(10))
+      z.push(bundle[1].toString(10))
+      pows.push(bundle[2].toString(10))
+      pows.push(bundle[3].toString(10))
+      pows.push(bundle[4].toString(10))
+      pows.push(bundle[5].toString(10))
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec).toString(10)
+    console.log(comm)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+  }
+}
+makeCommit()
+i =0
+var sec = web3.sha3(sks[i],1)
+con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+con.commit.sendTransaction
+con.commit.sendTransaction(e,z,0,pows,{from:bob,value:0})
+pows
+e
+z
+con.getN()
+function makeCommit(){
+  unlock()
+  for (i=0;i<4;i++){
+    var sec = web3.sha3(sks[i],1)
+    var w = web3.sha3(sks[i],2)
+    var e = []
+    var z = []
+    var pows = []
+    for (j=0;j<4;j++){
+      var bundle = con.computeShareAndProof(sec,pks[j].x,pks[j].y,w)
+      e.push(bundle[0].toString(10))
+      z.push(bundle[1].toString(10))
+      pows.push(bundle[2].toString(10))
+      pows.push(bundle[3].toString(10))
+      pows.push(bundle[4].toString(10))
+      pows.push(bundle[5].toString(10))
+      console.log('PVSS : '+bundle)
+    }
+    var comm = web3.sha3(sec).toString(10)
+    console.log(comm)
+    con.commit.sendTransaction(e,z,comm,pows,{from:bob,value:0})
+  }
+}
+makeCommit()
+i=0
+var sec = web3.sha3(sks[i],1)
+con.commit.sendTransaction([e[0]],[z[0]],comm,[pows[0],pows[1],pows[2],pows[3]],{from:bob,value:0})
+con.commit.sendTransaction([e[0],e[1],e[2],e[3]],[z[0],z[1],z[2],z[3]],comm,[pows[0],pows[1],pows[2],pows[3],pows[4],pows[5],pows[6],pows[7],pows[8],pows[9],pows[10],pows[11],pows[12],pows[13],pows[14],pows[15]],{from:bob,value:0})
+con.commit.sendTransaction([e[0],e[1],e[2]],[z[0],z[1],z[2]],comm,[pows[0],pows[1],pows[2],pows[3],pows[4],pows[5],pows[6],pows[7],pows[8],pows[9],pows[10],pows[11]],{from:bob,value:0})
+e
+z
+pows.length
+pows
+comm
+con.commit.sendTransaction([e[0]],[z[0]],comm,[pows[0],pows[1],pows[2],pows[3]],{from:bob,value:0})
+unlock()
+con.commit.sendTransaction([e[0]],[z[0]],comm,[pows[0],pows[1],pows[2],pows[3]],{from:bob,value:0})
+con.commit.sendTransaction([e[0],e[1]],[z[0]],comm,[pows[0],pows[1],pows[2],pows[3]],{from:bob,value:0})
+con.commit.sendTransaction([e[0]],[z[0]],comm,[pows[0],pows[1],pows[2],pows[3]],{from:bob,value:0})
+e[0],e[1]
+[e[0],e[1]]
+e
+[e[0]]
+var conabi = web3.eth.contract([{"constant":true,"inputs":[],"name":"getG","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"c","type":"bytes32"}],"name":"verifyOpen","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"count","type":"uint256"},{"name":"secxys","type":"uint256[]"}],"name":"computeBeacon","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"partyIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"pows","type":"uint256[4]"}],"name":"share","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"sk","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"shx","type":"uint256"},{"name":"shy","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeDecryptionAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"num","type":"uint256"},{"name":"m","type":"uint256"}],"name":"inv","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[],"name":"getN","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"open","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"isInf","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"poly","type":"uint256[]"},{"name":"x0","type":"uint256"}],"name":"evaluatePoly","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"verifyZKP","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getH","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"tin","type":"uint256"},{"name":"inds","type":"uint256[]"},{"name":"i","type":"uint256"}],"name":"computeLambda","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"nums","type":"uint256[8]"}],"name":"computeVerifierHash","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"eva","type":"uint256"},{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeShareAndProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"bases","type":"uint256[4]"},{"name":"pows","type":"uint256[4]"},{"name":"sec","type":"uint256"},{"name":"w","type":"uint256"}],"name":"computeProof","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"sharerIndex","type":"uint256"},{"name":"e","type":"uint256"},{"name":"z","type":"uint256"},{"name":"decx","type":"uint256"},{"name":"decy","type":"uint256"}],"name":"submitDecryption","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"pkx","type":"uint256"},{"name":"pky","type":"uint256"}],"name":"register","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"}],"name":"double","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"x1","type":"uint256"},{"name":"y1","type":"uint256"},{"name":"x2","type":"uint256"},{"name":"y2","type":"uint256"}],"name":"add","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"inds","type":"uint256[]"},{"name":"decs","type":"uint256[]"}],"name":"reconstruct","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"k","type":"uint256"},{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"mul","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"nextStage","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"comm","type":"bytes32"}],"name":"commit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[],"name":"RegisterReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"decrypterAddress","type":"address"},{"indexed":false,"name":"sharerIndex","type":"uint256"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Decryption","type":"event"},{"anonymous":false,"inputs":[],"name":"CommitReady","type":"event"},{"anonymous":false,"inputs":[],"name":"OpenReady","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"index","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"PublicKey","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"shareindex","type":"uint256"},{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"e","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"shx","type":"uint256"},{"indexed":false,"name":"shy","type":"uint256"},{"indexed":false,"name":"vx","type":"uint256"},{"indexed":false,"name":"vy","type":"uint256"}],"name":"Share","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"comm","type":"bytes32"}],"name":"Commit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"partyAddress","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"}],"name":"Open","type":"event"}]);
+var browser_ballot_sol_pvss = conabi.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x6060604052341561000f57600080fd5b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600080819055506000600160146101000a81548160ff021916908315150217905550612130806100816000396000f300606060405260043610610149576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806304c09ce91461014e57806309c79dfd1461017e5780630af17c34146101cf57806311028ba31461024d578063183847f1146102a357806322554f341461031c578063338255f3146103455780633e955225146103855780634082de67146103ae57806372939df9146103cf578063798340cd146104135780637eeba8541461048a57806382529fdb146104fb57806397ecd9681461052b5780639a423aa9146105ab578063a4f35e4614610618578063aa9a56da1461068d578063d106ea091461072c578063d66d6c1014610768578063d89adb1d14610789578063e022d77c146107d0578063e12035f514610829578063e91cac2d146108de578063ee3743ab1461092e578063f14fcbc814610938575b600080fd5b341561015957600080fd5b610161610954565b604051808381526020018281526020019250505060405180910390f35b341561018957600080fd5b6101b56004808035906020019091908035906020019091908035600019169060200190919050506109a1565b604051808215151515815260200191505060405180910390f35b34156101da57600080fd5b6102306004808035906020019091908035906020019082018035906020019080806020026020016040519081016040528093929190818152602001838360200280828437820191505050505050919050506109d4565b604051808381526020018281526020019250505060405180910390f35b6102a160048080359060200190919080359060200190919080359060200190919080608001906004806020026040519081016040528092919082600460200280828437820191505050505091905050610a51565b005b34156102ae57600080fd5b6102f16004808035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091905050610b5a565b6040518085815260200184815260200183815260200182815260200194505050505060405180910390f35b341561032757600080fd5b61032f610d16565b6040518082815260200191505060405180910390f35b341561035057600080fd5b61036f6004808035906020019091908035906020019091905050610d2c565b6040518082815260200191505060405180910390f35b341561039057600080fd5b610398610dca565b6040518082815260200191505060405180910390f35b6103cd6004808035906020019091908035906020019091905050610dd3565b005b34156103da57600080fd5b6103f96004808035906020019091908035906020019091905050610e66565b604051808215151515815260200191505060405180910390f35b341561041e57600080fd5b610474600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091908035906020019091905050610e75565b6040518082815260200191505060405180910390f35b341561049557600080fd5b6104e16004808035906020019091908035906020019091908061010001906008806020026040519081016040528092919082600860200280828437820191505050505091905050610f0c565b604051808215151515815260200191505060405180910390f35b341561050657600080fd5b61050e610f24565b604051808381526020018281526020019250505060405180910390f35b341561053657600080fd5b610595600480803590602001909190803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091908035906020019091905050610f71565b6040518082815260200191505060405180910390f35b34156105b657600080fd5b61060260048080359060200190919080359060200190919080610100019060088060200260405190810160405280929190826008602002808284378201915050505050919050506110ad565b6040518082815260200191505060405180910390f35b341561062357600080fd5b6106546004808035906020019091908035906020019091908035906020019091908035906020019091905050611472565b60405180878152602001868152602001858152602001848152602001838152602001828152602001965050505050505060405180910390f35b341561069857600080fd5b61070f60048080608001906004806020026040519081016040528092919082600460200280828437820191505050505091908060800190600480602002604051908101604052809291908260046020028082843782019150505050509190803590602001909190803590602001909190505061161f565b604051808381526020018281526020019250505060405180910390f35b61076660048080359060200190919080359060200190919080359060200190919080359060200190919080359060200190919050506117f1565b005b610787600480803590602001909190803590602001909190505061189f565b005b341561079457600080fd5b6107b3600480803590602001909190803590602001909190505061194c565b604051808381526020018281526020019250505060405180910390f35b34156107db57600080fd5b61080c6004808035906020019091908035906020019091908035906020019091908035906020019091905050611b42565b604051808381526020018281526020019250505060405180910390f35b341561083457600080fd5b6108c160048080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050611dbf565b604051808381526020018281526020019250505060405180910390f35b34156108e957600080fd5b6109116004808035906020019091908035906020019091908035906020019091905050611e74565b604051808381526020018281526020019250505060405180910390f35b610936611f0e565b005b610952600480803560001916906020019091905050612022565b005b6000807f1b9df533287272a7e645e2f02912f10142d448137a41e36fa749f2fbe4fc1c9c7fe6ae7624588e6fe9995884910789ffef3ef5bd6a2ccf8d482c6a072baca7c276915091509091565b60008160001916848460405180838152602001828152602001925050506040518091039020600019161490509392505050565b600080600080600080925060009150600090505b86811015610a4157610a2c83838884815181101515610a0357fe5b9060200190602002015189858c01815181101515610a1d57fe5b90602001906020020151611b42565b809350819450505080806001019150506109e8565b8282945094505050509250929050565b600160149054906101000a900460ff161515610a6c57610b54565b7f374bfa601dcc9f096aee03430a1112769e8bd1ec096ce83a57779ec5b076890d84338585856000600481101515610aa057fe5b6020020151866001600481101515610ab457fe5b6020020151876002600481101515610ac857fe5b6020020151886003600481101515610adc57fe5b6020020151604051808981526020018873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018781526020018681526020018581526020018481526020018381526020018281526020019850505050505050505060405180910390a15b50505050565b600080600080610b686120b4565b610b9c610b958c7ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141610d2c565b8989611e74565b826000600481101515610bab57fe5b60200201836001600481101515610bbe57fe5b6020020182815250828152505050610c806080604051908101604052807f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f8179881526020017f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b88152602001836000600481101515610c3657fe5b60200201518152602001836001600481101515610c4f57fe5b60200201518152506080604051908101604052808d81526020018c81526020018b81526020018a8152508d8961161f565b826002600481101515610c8f57fe5b60200201836003600481101515610ca257fe5b6020020182815250828152505050806002600481101515610cbf57fe5b6020020151816003600481101515610cd357fe5b6020020151826000600481101515610ce757fe5b6020020151836001600481101515610cfb57fe5b60200201519450945094509450509650965096509692505050565b60006002600054811515610d2657fe5b04905090565b60008060008060008060008060008060008b99508c985060019750600096506000955060019450600093506000925060009150600090505b600089141515610db757888a811515610d7957fe5b049050888a811515610d8757fe5b0691508899508692508493508198508b8c8289098d03890896508297508b8c8287098d0387089450839550610d64565b859a505050505050505050505092915050565b60008054905090565b600160149054906101000a900460ff161515610dee57610e62565b7f5e3c8f6b552a3ff0e973b330d0768aa08ae9dfb0106405d51377c98e032e9b06338383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a15b5050565b60008082841714905092915050565b6000806000808551925060009150600090505b82811015610f00577ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414185830991507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd03641418682815181101515610ee557fe5b90602001906020020151830891508080600101915050610e88565b81935050505092915050565b600083610f1a8585856110ad565b1490509392505050565b6000807f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f817987f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8915091509091565b600080600060019150600090505b858110156110a15780841415610f9457611094565b7ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd03641418582815181101515610fc357fe5b90602001906020020151830991507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414161108f7ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141878781518110151561102457fe5b906020019060200201517ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414103888581518110151561105e57fe5b90602001906020020151087ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141610d2c565b830991505b8080600101915050610f7f565b81925050509392505050565b60006110b76120dc565b6000806110eb868660006008811015156110cd57fe5b60200201518760016008811015156110e157fe5b6020020151611e74565b8460006006811015156110fa57fe5b6020020185600160068110151561110d57fe5b602002018281525082815250505061114c8786600460088110151561112e57fe5b602002015187600560088110151561114257fe5b6020020151611e74565b84600460068110151561115b57fe5b6020020185600560068110151561116e57fe5b60200201828152508281525050506111d483600060068110151561118e57fe5b60200201518460016006811015156111a257fe5b60200201518560046006811015156111b657fe5b60200201518660056006811015156111ca57fe5b6020020151611b42565b8460006006811015156111e357fe5b602002018560016006811015156111f657fe5b60200201828152508281525050506112358686600260088110151561121757fe5b602002015187600360088110151561122b57fe5b6020020151611e74565b84600260068110151561124457fe5b6020020185600360068110151561125757fe5b60200201828152508281525050506112968786600660088110151561127857fe5b602002015187600760088110151561128c57fe5b6020020151611e74565b8460046006811015156112a557fe5b602002018560056006811015156112b857fe5b602002018281525082815250505061131e8360026006811015156112d857fe5b60200201518460036006811015156112ec57fe5b602002015185600460068110151561130057fe5b602002015186600560068110151561131457fe5b6020020151611b42565b84600260068110151561132d57fe5b6020020185600360068110151561134057fe5b602002018281525082815250505084600460088110151561135d57fe5b602002015185600560088110151561137157fe5b602002015186600660088110151561138557fe5b602002015187600760088110151561139957fe5b60200201518660006006811015156113ad57fe5b60200201518760016006811015156113c157fe5b60200201518860026006811015156113d557fe5b60200201518960036006811015156113e957fe5b60200201516040518089815260200188815260200187815260200186815260200185815260200184815260200183815260200182815260200198505050505050505050604051809103902091507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141826001900481151561146557fe5b0690505050509392505050565b6000806000806000806114836120b4565b6000806114918d8d8d611e74565b8460006004811015156114a057fe5b602002018560016004811015156114b357fe5b602002018281525082815250505061150c8d7f1b9df533287272a7e645e2f02912f10142d448137a41e36fa749f2fbe4fc1c9c7fe6ae7624588e6fe9995884910789ffef3ef5bd6a2ccf8d482c6a072baca7c276611e74565b84600260048110151561151b57fe5b6020020185600360048110151561152e57fe5b60200201828152508281525050506115a96080604051908101604052808e81526020018d81526020017f1b9df533287272a7e645e2f02912f10142d448137a41e36fa749f2fbe4fc1c9c81526020017fe6ae7624588e6fe9995884910789ffef3ef5bd6a2ccf8d482c6a072baca7c276815250848f8d61161f565b809250819350505081818460006004811015156115c257fe5b60200201518560016004811015156115d657fe5b60200201518660026004811015156115ea57fe5b60200201518760036004811015156115fe57fe5b60200201519850985098509850985098505050509499939850945094509450565b60008061162a6120b4565b6000806000611660878b600060048110151561164257fe5b60200201518c600160048110151561165657fe5b6020020151611e74565b85600060048110151561166f57fe5b6020020186600160048110151561168257fe5b60200201828152508281525050506116c1878b60026004811015156116a357fe5b60200201518c60036004811015156116b757fe5b6020020151611e74565b8560026004811015156116d057fe5b602002018660036004811015156116e357fe5b602002018281525082815250505088846040518083600460200280838360005b8381101561171e578082015181840152602081019050611703565b5050505090500182600460200280838360005b8381101561174c578082015181840152602081019050611731565b5050505090500192505050604051809103902092507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141836001900481151561179057fe5b0691507ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414180838a097ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414103880890508181955095505050505094509492505050565b600160149054906101000a900460ff16151561180c57611898565b7f6bcd6fab31e08feeaaac71b7498f19294d68e0b5e67cf435805d0020e2a378ff338686868686604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152602001838152602001828152602001965050505050505060405180910390a15b5050505050565b600160149054906101000a900460ff16156118b957611948565b60008081548092919060010191905055507f8e7adf969a64f4532dc9b0aeed36db4d01760f5a01ad64d48351c86a963d1da9600054338484604051808581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182815260200194505050505060405180910390a15b5050565b60008060008060007ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f6119c37ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f886002097ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f610d2c565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f808a7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f8c600309096000080992507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f80887ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f03897ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f03087ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f8586090891507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f897ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f038508850987087ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f0390508181945094505050509250929050565b6000806000806000611b548989610e66565b15611b6457868694509450611db3565b611b6e8787610e66565b15611b7e57888894509450611db3565b86891415611bb35785881415611ba157611b98898961194c565b94509450611db3565b60008081915080905094509450611db3565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f611c437ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f897ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f038c087ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f610d2c565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f887ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f038b080992507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f80887ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f038b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f03087ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f8586090891507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f8b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f038508850989087ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f0390508181945094505b50505094509492505050565b6000806000806000806000808951955060009450600093506000925060009150600090505b85811015611e6157611e38611dfa878c84610f71565b8a83600202815181101515611e0b57fe5b906020019060200201518b60018560020201815181101515611e2957fe5b90602001906020020151611e74565b8093508194505050611e4c85858585611b42565b80955081965050508080600101915050611de4565b8484975097505050505050509250929050565b6000806000806000806000809450600093508992508891508790505b600183141515611ee7576000600284811515611ea857fe5b06141515611ec557611ebc85858484611b42565b80955081965050505b611ecf828261194c565b80925081935050506001839060020a90049250611e90565b611ef385858484611b42565b80955081965050508484965096505050505050935093915050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561202057600160149054906101000a900460ff1615611fb157600080819055507f38f3fe060a88a49502a148f4c2a6fc866d17cd93d9226350bd1a23485f3fd7af60405160405180910390a1611ff5565b600160149054906101000a900460ff161515611ff4577faf0736842f7e8152e20ea782711621405060fd7faa7706653957074afda5aff160405160405180910390a15b5b600160149054906101000a900460ff1615600160146101000a81548160ff0219169083151502179055505b565b600160149054906101000a900460ff16151561203d576120b1565b7f0b6cc2ecff3b94112d44f2dbac8aee8eb02772c07b1e52605f0dc6d726bf0e313382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182600019166000191681526020019250505060405180910390a15b50565b6080604051908101604052806004905b60008152602001906001900390816120c45790505090565b60c0604051908101604052806006905b60008152602001906001900390816120ec57905050905600a165627a7a7230582028179da076cad082b825f2af0683a63280a2f644397e736a6c44f1a7b7ac69960029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })
+var con=conabi.at('0x17b20910221db80d902ff80ab4baa92a52ce68d6')
+con.nextStage()
+con.nextStage.sendTransaction({from:bob,value:0})
+var con2 = web3.eth.contract([{"constant":false,"inputs":[],"name":"doTheCall","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"sender","type":"address"},{"indexed":false,"name":"recipient","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"MoneySent","type":"event"}]);
+var ins = con2.at('0x5635c6156d16c7cf602cec3337c5638b7c8ef3c4')
+ins.doTheCall.sendTransaction({from:mytam,value:5000000})
+unlock()
+ins.doTheCall.sendTransaction({from:mytam,value:5000000})
+var con = web3.eth.contract([{"constant":false,"inputs":[],"name":"gimmeMoney","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"sender","type":"address"},{"indexed":false,"name":"recipient","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"MoneySent","type":"event"}]);
+var ins = con.at('0x86fb934c7abfdb9e939fd37d05169cfe5192a210')
+ins.doTheCall.sendTransaction({from:mytam,value:4000000})
+ins.gimmeMoney.sendTransaction({from:mytam,value:4000000})
+var erc = web3.eth.contract([{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"totalSupply","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"ECR20","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]);
+var browser_ballot_sol_erc20 = erc.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x6060604052341561000f57600080fd5b61092d8061001e6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100a9578063095ea7b31461013757806318160ddd1461019157806323b872dd146101ba578063313ce5671461023357806370a082311461026257806375c45de1146102af57806395d89b41146102c4578063a9059cbb14610352578063dd62ed3e146103ac575b600080fd5b34156100b457600080fd5b6100bc610418565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100fc5780820151818401526020810190506100e1565b50505050905090810190601f1680156101295780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561014257600080fd5b610177600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610451565b604051808215151515815260200191505060405180910390f35b341561019c57600080fd5b6101a461045d565b6040518082815260200191505060405180910390f35b34156101c557600080fd5b610219600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610468565b604051808215151515815260200191505060405180910390f35b341561023e57600080fd5b6102466105e3565b604051808260ff1660ff16815260200191505060405180910390f35b341561026d57600080fd5b610299600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506105e8565b6040518082815260200191505060405180910390f35b34156102ba57600080fd5b6102c2610630565b005b34156102cf57600080fd5b6102d761073d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103175780820151818401526020810190506102fc565b50505050905090810190601f1680156103445780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561035d57600080fd5b610392600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610776565b604051808215151515815260200191505060405180910390f35b34156103b757600080fd5b610402600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061088d565b6040518082815260200191505060405180910390f35b6040805190810160405280600781526020017f457468637261700000000000000000000000000000000000000000000000000081525081565b60006001905092915050565b6000620493e0905090565b6000816000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054036000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054016000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550600173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92560016040518082815260200191505060405180910390a3600190509392505050565b601b81565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b61271060008073dda6ef2ff259928c561b2d30f0cad2c2736ce8b673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550612710600080738691bf25ce4a56b15c1f99c944dc94826903180173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555061271060008073b1b6a66a410edc72473d92decb3772bad863e24373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550565b6040805190810160405280600381526020017f454352000000000000000000000000000000000000000000000000000000000081525081565b600080339050826000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054036000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054016000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550600191505092915050565b6000600173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60016040518082815260200191505060405180910390a360009050929150505600a165627a7a72305820094ff3ce50b8498cb5f9a5ce47ef889815c9de19b151678693503ec49d7c2b8f0029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })

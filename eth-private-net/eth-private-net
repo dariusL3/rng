@@ -9,6 +9,8 @@ BASE_RPC_PORT=8100
 
 SCRIPT=$(basename "$0")
 
+#geth='/home/lt048/Downloads/EndIt/Ether/WorkingGeth/go-ethereum/build/bin/geth'
+#geth='/home/lt048/Downloads/EndIt/Ether/go-ethereum/build/bin/geth'
 
 USAGE="Name:
     $SCRIPT - Command line utility for creating and running a three node Ethereum private net
@@ -43,7 +45,7 @@ case $CMD in
   init)
     for IDENTITY in ${IDENTITIES[@]}; do
       echo "Initializing genesis block for $IDENTITY"
-      geth --datadir=./$IDENTITY/ $FLAGS init genesis.json
+      geth --datadir=$IDENTITY $FLAGS init genesis.json
     done
     ;;
 
@@ -75,7 +77,7 @@ case $CMD in
 
       lily)
         OFFSET=3
-        DEV_FLAGS='--nodiscover --verbosity=4 --mine'
+        DEV_FLAGS='--nodiscover --verbosity=4 --mine --minerthreads=1'
         ;;
       baoanh)
         OFFSET=4
@@ -101,7 +103,7 @@ case $CMD in
     RPC_PORT=$((BASE_RPC_PORT + OFFSET))
 
     echo "Starting node for $IDENTITY on port: $PORT, RPC port: $RPC_PORT. Console logs sent to ./$IDENTITY/console.log"
-    geth --datadir=./$IDENTITY --port=$PORT --rpcport=$RPC_PORT $FLAGS $DEV_FLAGS 2>> ./$IDENTITY/console.log $CONSOLE
+    geth --datadir=$IDENTITY --port=$PORT --rpcaddr=172.16.20.65 --rpcport=$RPC_PORT $FLAGS $DEV_FLAGS 2>> ./$IDENTITY/console.log $CONSOLE
     ;;
 
   connect)

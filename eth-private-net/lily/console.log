@@ -1,0 +1,578 @@
+./eth-private-net: line 106: --datadir=lily: command not found
+DEBUG[08-13|09:32:14.335] Sanitizing Go's GC trigger               percent=100
+INFO [08-13|09:32:14.335] Maximum peer count                       ETH=25 LES=0 total=25
+DEBUG[08-13|09:32:14.336] FS scan times                            list=68.779µs set=10.914µs diff=8.867µs
+INFO [08-13|09:32:14.337] Starting peer-to-peer node               instance=Geth/v1.8.12-stable-37685930/linux-amd64/go1.10
+INFO [08-13|09:32:14.337] Allocated cache and file handles         database=/home/lt048/Downloads/eth-private-net/lily/geth/chaindata cache=768 handles=512
+INFO [08-13|09:32:14.353] Initialised chain configuration          config="{ChainID: 8888 Homestead: <nil> DAO: <nil> DAOSupport: false EIP150: <nil> EIP155: <nil> EIP158: <nil> Byzantium: 0 Constantinople: <nil> Engine: unknown}"
+INFO [08-13|09:32:14.353] Disk storage enabled for ethash caches   dir=/home/lt048/Downloads/eth-private-net/lily/geth/ethash count=3
+INFO [08-13|09:32:14.353] Disk storage enabled for ethash DAGs     dir=/home/lt048/.ethash                                    count=2
+INFO [08-13|09:32:14.353] Initialising Ethereum protocol           versions="[63 62]" network=8888
+INFO [08-13|09:32:14.353] Loaded most recent local header          number=0 hash=358168…887b02 td=100000
+INFO [08-13|09:32:14.353] Loaded most recent local full block      number=0 hash=358168…887b02 td=100000
+INFO [08-13|09:32:14.353] Loaded most recent local fast block      number=0 hash=358168…887b02 td=100000
+DEBUG[08-13|09:32:14.353] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:14.353] Regenerated local transaction journal    transactions=0 accounts=0
+DEBUG[08-13|09:32:14.353] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:32:14.354] Starting P2P networking 
+INFO [08-13|09:32:14.354] RLPx listener up                         self="enode://4a3e77a2b0fb37d99bf0a5ad6c356c7aeb0ad8c1fbb377616e17e2546df3a70684d971b79ba9404d426beef892a6d12ad9449f3b86653555a1ca7c29ce49052a@[::]:40303?discport=0"
+DEBUG[08-13|09:32:14.354] InProc registered                        service=&{node:0xc420143b80} namespace=admin
+DEBUG[08-13|09:32:14.354] InProc registered                        service=&{node:0xc420143b80} namespace=admin
+DEBUG[08-13|09:32:14.354] InProc registered                        service="&{mu:{state:0 sema:0} cpuW:<nil> cpuFile: traceW:<nil> traceFile:}" namespace=debug
+DEBUG[08-13|09:32:14.354] InProc registered                        service=&{node:0xc420143b80}                                                 namespace=debug
+DEBUG[08-13|09:32:14.354] InProc registered                        service=&{stack:0xc420143b80}                                                namespace=web3
+DEBUG[08-13|09:32:14.354] InProc registered                        service=&{b:0xc4203e7be0}                                                    namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{b:0xc4203e7be0}                                                    namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service="&{b:0xc4203e7be0 nonceLock:0xc4203e7c60}"                           namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{b:0xc4203e7be0}                                                    namespace=txpool
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{b:0xc4203e7be0}                                                    namespace=debug
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{b:0xc4203e7be0}                                                    namespace=debug
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{am:0xc420218340}                                                   namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service="&{am:0xc420218340 nonceLock:0xc4203e7c60 b:0xc4203e7be0}"           namespace=personal
+DEBUG[08-13|09:32:14.355] InProc registered                        service=&{e:0xc4203a49a0}                                                    namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service="&{e:0xc4203a49a0 agent:0xc42025a580}"                               namespace=eth
+DEBUG[08-13|09:32:14.355] InProc registered                        service="&{d:0xc4202ec340 mux:0xc420404ea0 installSyncSubscription:0xc420217e60 uninstallSyncSubscription:0xc420217ec0}" namespace=eth
+DEBUG[08-13|09:32:14.356] InProc registered                        service=&{e:0xc4203a49a0}                                                                                                namespace=miner
+DEBUG[08-13|09:32:14.356] InProc registered                        service="&{backend:0xc4203e7be0 mux:0xc420404ea0 quit:<nil> chainDb:0xc420311080 events:0xc4200ba0a0 filtersMu:{state:0 sema:0} filters:map[]}" namespace=eth
+DEBUG[08-13|09:32:14.356] InProc registered                        service=&{eth:0xc4203a49a0}                                                                                                                     namespace=admin
+DEBUG[08-13|09:32:14.356] InProc registered                        service=&{eth:0xc4203a49a0}                                                                                                                     namespace=debug
+DEBUG[08-13|09:32:14.356] InProc registered                        service="&{config:0xc42025a100 eth:0xc4203a49a0}"                                                                                               namespace=debug
+DEBUG[08-13|09:32:14.356] InProc registered                        service="&{net:0xc42019e000 networkVersion:8888}"                                                                                               namespace=net
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=admin
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=admin
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=web3
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=txpool
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=personal
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.356] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=miner
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=eth
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=admin
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=debug
+DEBUG[08-13|09:32:14.357] IPC registered                           namespace=net
+INFO [08-13|09:32:14.357] IPC endpoint opened                      url=/home/lt048/Downloads/eth-private-net/lily/geth.ipc
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=web3
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=personal
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=eth
+DEBUG[08-13|09:32:14.357] HTTP registered                          namespace=net
+INFO [08-13|09:32:14.357] HTTP endpoint opened                     url=http://172.16.20.65:8103                            cors="\"*\"" vhosts=localhost
+INFO [08-13|09:32:14.357] Transaction pool price threshold updated price=18000000000
+INFO [08-13|09:32:14.357] Etherbase automatically configured       address=0xDda6eF2fF259928c561b2D30F0caD2C2736Ce8b6
+INFO [08-13|09:32:14.357] Starting mining operation 
+INFO [08-13|09:32:14.357] Commit new mining work                   number=1 txs=0 uncles=0 elapsed=179.087µs
+DEBUG[08-13|09:32:14.360] Loaded old ethash dataset from disk      epoch=0
+DEBUG[08-13|09:32:14.362] Loaded old ethash dataset from disk      epoch=1
+DEBUG[08-13|09:32:16.455] Couldn't add port mapping                proto=tcp extport=40303 intport=40303 interface="UPnP or NAT-PMP" err="no UPnP or NAT-PMP router discovered"
+INFO [08-13|09:32:26.618] Successfully sealed new block            number=1 hash=61aa48…d7b589
+DEBUG[08-13|09:32:26.618] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:26.619] 🔨 mined potential block                  number=1 hash=61aa48…d7b589
+DEBUG[08-13|09:32:26.619] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:26.619] Commit new mining work                   number=2 txs=0 uncles=0 elapsed=217.629µs
+INFO [08-13|09:32:27.904] Successfully sealed new block            number=2 hash=c58128…4cc172
+DEBUG[08-13|09:32:27.904] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:27.904] 🔨 mined potential block                  number=2 hash=c58128…4cc172
+DEBUG[08-13|09:32:27.904] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:27.905] Commit new mining work                   number=3 txs=0 uncles=0 elapsed=139.089µs
+INFO [08-13|09:32:32.982] Successfully sealed new block            number=3 hash=a065ff…cb4d9c
+DEBUG[08-13|09:32:32.982] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:32.982] 🔨 mined potential block                  number=3 hash=a065ff…cb4d9c
+DEBUG[08-13|09:32:32.982] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:32.982] Commit new mining work                   number=4 txs=0 uncles=0 elapsed=161.48µs
+DEBUG[08-13|09:32:34.354] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:32:37.821] Successfully sealed new block            number=4 hash=6322ce…c8d4b4
+DEBUG[08-13|09:32:37.822] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:37.822] 🔨 mined potential block                  number=4 hash=6322ce…c8d4b4
+DEBUG[08-13|09:32:37.822] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:37.822] Commit new mining work                   number=5 txs=0 uncles=0 elapsed=156.634µs
+INFO [08-13|09:32:39.554] Successfully sealed new block            number=5 hash=88fd47…ec7325
+DEBUG[08-13|09:32:39.554] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:39.554] 🔨 mined potential block                  number=5 hash=88fd47…ec7325
+DEBUG[08-13|09:32:39.554] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:39.554] Commit new mining work                   number=6 txs=0 uncles=0 elapsed=142.227µs
+INFO [08-13|09:32:44.746] Successfully sealed new block            number=6 hash=6b999e…881615
+DEBUG[08-13|09:32:44.746] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:44.747] 🔗 block reached canonical chain          number=1 hash=61aa48…d7b589
+INFO [08-13|09:32:44.747] 🔨 mined potential block                  number=6 hash=6b999e…881615
+DEBUG[08-13|09:32:44.747] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:44.747] Commit new mining work                   number=7 txs=0 uncles=0 elapsed=154.384µs
+INFO [08-13|09:32:51.825] Successfully sealed new block            number=7 hash=6b78d0…71c9e1
+DEBUG[08-13|09:32:51.826] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:51.826] 🔗 block reached canonical chain          number=2 hash=c58128…4cc172
+INFO [08-13|09:32:51.826] 🔨 mined potential block                  number=7 hash=6b78d0…71c9e1
+DEBUG[08-13|09:32:51.826] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:51.826] Commit new mining work                   number=8 txs=0 uncles=0 elapsed=120.875µs
+INFO [08-13|09:32:52.528] Successfully sealed new block            number=8 hash=7052bd…c95171
+DEBUG[08-13|09:32:52.528] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:52.528] 🔗 block reached canonical chain          number=3 hash=a065ff…cb4d9c
+INFO [08-13|09:32:52.528] 🔨 mined potential block                  number=8 hash=7052bd…c95171
+DEBUG[08-13|09:32:52.528] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:52.528] Commit new mining work                   number=9 txs=0 uncles=0 elapsed=136.503µs
+DEBUG[08-13|09:32:54.354] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:32:55.534] Successfully sealed new block            number=9 hash=be8d07…23d185
+DEBUG[08-13|09:32:55.534] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:55.535] 🔗 block reached canonical chain          number=4 hash=6322ce…c8d4b4
+INFO [08-13|09:32:55.535] 🔨 mined potential block                  number=9 hash=be8d07…23d185
+DEBUG[08-13|09:32:55.535] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:55.535] Commit new mining work                   number=10 txs=0 uncles=0 elapsed=140.565µs
+INFO [08-13|09:32:55.878] Successfully sealed new block            number=10 hash=cee255…655a16
+DEBUG[08-13|09:32:55.878] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:55.878] 🔗 block reached canonical chain          number=5  hash=88fd47…ec7325
+INFO [08-13|09:32:55.878] 🔨 mined potential block                  number=10 hash=cee255…655a16
+DEBUG[08-13|09:32:55.878] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:55.878] Commit new mining work                   number=11 txs=0 uncles=0 elapsed=132.222µs
+INFO [08-13|09:32:56.302] Successfully sealed new block            number=11 hash=0188f6…465664
+DEBUG[08-13|09:32:56.302] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:32:56.302] 🔗 block reached canonical chain          number=6  hash=6b999e…881615
+INFO [08-13|09:32:56.302] 🔨 mined potential block                  number=11 hash=0188f6…465664
+DEBUG[08-13|09:32:56.302] Reinjecting stale transactions           count=0
+INFO [08-13|09:32:56.302] Commit new mining work                   number=12 txs=0 uncles=0 elapsed=198.567µs
+INFO [08-13|09:33:05.092] Successfully sealed new block            number=12 hash=6df49a…f888f4
+DEBUG[08-13|09:33:05.092] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:05.092] 🔗 block reached canonical chain          number=7  hash=6b78d0…71c9e1
+INFO [08-13|09:33:05.092] 🔨 mined potential block                  number=12 hash=6df49a…f888f4
+DEBUG[08-13|09:33:05.092] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:05.092] Commit new mining work                   number=13 txs=0 uncles=0 elapsed=154.019µs
+INFO [08-13|09:33:06.137] Successfully sealed new block            number=13 hash=fc334b…d32a29
+DEBUG[08-13|09:33:06.137] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:06.137] 🔗 block reached canonical chain          number=8  hash=7052bd…c95171
+INFO [08-13|09:33:06.137] 🔨 mined potential block                  number=13 hash=fc334b…d32a29
+DEBUG[08-13|09:33:06.137] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:06.137] Commit new mining work                   number=14 txs=0 uncles=0 elapsed=147.244µs
+INFO [08-13|09:33:08.434] Successfully sealed new block            number=14 hash=8cae8a…5d394c
+DEBUG[08-13|09:33:08.434] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:08.434] 🔗 block reached canonical chain          number=9  hash=be8d07…23d185
+INFO [08-13|09:33:08.435] 🔨 mined potential block                  number=14 hash=8cae8a…5d394c
+DEBUG[08-13|09:33:08.435] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:08.435] Commit new mining work                   number=15 txs=0 uncles=0 elapsed=148.837µs
+INFO [08-13|09:33:08.726] Successfully sealed new block            number=15 hash=790a7b…60eb6e
+DEBUG[08-13|09:33:08.726] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:08.726] 🔗 block reached canonical chain          number=10 hash=cee255…655a16
+INFO [08-13|09:33:08.726] 🔨 mined potential block                  number=15 hash=790a7b…60eb6e
+DEBUG[08-13|09:33:08.726] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:08.726] Commit new mining work                   number=16 txs=0 uncles=0 elapsed=111.264µs
+INFO [08-13|09:33:10.394] Successfully sealed new block            number=16 hash=d569b0…69584b
+DEBUG[08-13|09:33:10.394] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:10.394] 🔗 block reached canonical chain          number=11 hash=0188f6…465664
+INFO [08-13|09:33:10.394] 🔨 mined potential block                  number=16 hash=d569b0…69584b
+DEBUG[08-13|09:33:10.394] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:10.394] Commit new mining work                   number=17 txs=0 uncles=0 elapsed=146.103µs
+DEBUG[08-13|09:33:14.354] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:33:14.867] Successfully sealed new block            number=17 hash=6c9d9f…c9608d
+DEBUG[08-13|09:33:14.867] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:14.867] 🔗 block reached canonical chain          number=12 hash=6df49a…f888f4
+INFO [08-13|09:33:14.868] 🔨 mined potential block                  number=17 hash=6c9d9f…c9608d
+DEBUG[08-13|09:33:14.867] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:14.868] Commit new mining work                   number=18 txs=0 uncles=0 elapsed=273.788µs
+INFO [08-13|09:33:15.585] Successfully sealed new block            number=18 hash=43b11b…239224
+DEBUG[08-13|09:33:15.585] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:15.585] 🔗 block reached canonical chain          number=13 hash=fc334b…d32a29
+INFO [08-13|09:33:15.585] 🔨 mined potential block                  number=18 hash=43b11b…239224
+DEBUG[08-13|09:33:15.585] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:15.585] Commit new mining work                   number=19 txs=0 uncles=0 elapsed=148.451µs
+INFO [08-13|09:33:15.912] Successfully sealed new block            number=19 hash=260822…4ecd6b
+DEBUG[08-13|09:33:15.913] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:15.913] 🔗 block reached canonical chain          number=14 hash=8cae8a…5d394c
+INFO [08-13|09:33:15.913] 🔨 mined potential block                  number=19 hash=260822…4ecd6b
+DEBUG[08-13|09:33:15.913] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:15.913] Commit new mining work                   number=20 txs=0 uncles=0 elapsed=228.523µs
+INFO [08-13|09:33:16.220] Successfully sealed new block            number=20 hash=8512c3…6b7581
+DEBUG[08-13|09:33:16.220] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:16.220] 🔗 block reached canonical chain          number=15 hash=790a7b…60eb6e
+INFO [08-13|09:33:16.220] 🔨 mined potential block                  number=20 hash=8512c3…6b7581
+DEBUG[08-13|09:33:16.220] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:16.221] Commit new mining work                   number=21 txs=0 uncles=0 elapsed=168.901µs
+INFO [08-13|09:33:18.231] Successfully sealed new block            number=21 hash=50a856…1a1db7
+DEBUG[08-13|09:33:18.231] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:18.231] 🔗 block reached canonical chain          number=16 hash=d569b0…69584b
+INFO [08-13|09:33:18.231] 🔨 mined potential block                  number=21 hash=50a856…1a1db7
+DEBUG[08-13|09:33:18.231] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:18.231] Commit new mining work                   number=22 txs=0 uncles=0 elapsed=173.208µs
+INFO [08-13|09:33:19.851] Successfully sealed new block            number=22 hash=23ba34…447f53
+DEBUG[08-13|09:33:19.851] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:19.851] 🔗 block reached canonical chain          number=17 hash=6c9d9f…c9608d
+INFO [08-13|09:33:19.851] 🔨 mined potential block                  number=22 hash=23ba34…447f53
+DEBUG[08-13|09:33:19.851] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:19.851] Commit new mining work                   number=23 txs=0 uncles=0 elapsed=153.222µs
+INFO [08-13|09:33:24.129] Successfully sealed new block            number=23 hash=e22e3f…7de784
+DEBUG[08-13|09:33:24.129] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:24.129] 🔗 block reached canonical chain          number=18 hash=43b11b…239224
+INFO [08-13|09:33:24.129] 🔨 mined potential block                  number=23 hash=e22e3f…7de784
+DEBUG[08-13|09:33:24.129] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:24.129] Commit new mining work                   number=24 txs=0 uncles=0 elapsed=127.234µs
+INFO [08-13|09:33:26.105] Successfully sealed new block            number=24 hash=d2d1b7…1a2acf
+DEBUG[08-13|09:33:26.106] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:26.106] 🔗 block reached canonical chain          number=19 hash=260822…4ecd6b
+INFO [08-13|09:33:26.106] 🔨 mined potential block                  number=24 hash=d2d1b7…1a2acf
+DEBUG[08-13|09:33:26.106] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:26.106] Commit new mining work                   number=25 txs=0 uncles=0 elapsed=153.872µs
+INFO [08-13|09:33:26.525] Successfully sealed new block            number=25 hash=407135…8c24a4
+DEBUG[08-13|09:33:26.525] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:26.525] 🔗 block reached canonical chain          number=20 hash=8512c3…6b7581
+INFO [08-13|09:33:26.525] 🔨 mined potential block                  number=25 hash=407135…8c24a4
+DEBUG[08-13|09:33:26.526] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:26.526] Commit new mining work                   number=26 txs=0 uncles=0 elapsed=205.27µs
+INFO [08-13|09:33:30.168] Successfully sealed new block            number=26 hash=1c52f3…9003c2
+DEBUG[08-13|09:33:30.168] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:30.169] 🔗 block reached canonical chain          number=21 hash=50a856…1a1db7
+INFO [08-13|09:33:30.169] 🔨 mined potential block                  number=26 hash=1c52f3…9003c2
+DEBUG[08-13|09:33:30.169] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:30.169] Commit new mining work                   number=27 txs=0 uncles=0 elapsed=307µs
+DEBUG[08-13|09:33:34.354] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:33:36.887] Successfully sealed new block            number=27 hash=2c7c18…f3c554
+DEBUG[08-13|09:33:36.887] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:36.887] 🔗 block reached canonical chain          number=22 hash=23ba34…447f53
+INFO [08-13|09:33:36.887] 🔨 mined potential block                  number=27 hash=2c7c18…f3c554
+DEBUG[08-13|09:33:36.887] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:36.888] Commit new mining work                   number=28 txs=0 uncles=0 elapsed=165.136µs
+INFO [08-13|09:33:39.548] Successfully sealed new block            number=28 hash=d8fb6f…aeb76f
+DEBUG[08-13|09:33:39.549] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:39.549] 🔗 block reached canonical chain          number=23 hash=e22e3f…7de784
+INFO [08-13|09:33:39.549] 🔨 mined potential block                  number=28 hash=d8fb6f…aeb76f
+DEBUG[08-13|09:33:39.549] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:39.549] Commit new mining work                   number=29 txs=0 uncles=0 elapsed=138.818µs
+INFO [08-13|09:33:44.268] Successfully sealed new block            number=29 hash=1094c2…f82ef5
+DEBUG[08-13|09:33:44.268] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:44.268] 🔗 block reached canonical chain          number=24 hash=d2d1b7…1a2acf
+INFO [08-13|09:33:44.268] 🔨 mined potential block                  number=29 hash=1094c2…f82ef5
+DEBUG[08-13|09:33:44.268] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:44.268] Commit new mining work                   number=30 txs=0 uncles=0 elapsed=200.639µs
+INFO [08-13|09:33:47.787] Successfully sealed new block            number=30 hash=d877ab…2fb8d1
+DEBUG[08-13|09:33:47.787] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:47.787] 🔗 block reached canonical chain          number=25 hash=407135…8c24a4
+INFO [08-13|09:33:47.787] 🔨 mined potential block                  number=30 hash=d877ab…2fb8d1
+DEBUG[08-13|09:33:47.788] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:47.788] Commit new mining work                   number=31 txs=0 uncles=0 elapsed=147.771µs
+INFO [08-13|09:33:49.959] Successfully sealed new block            number=31 hash=787415…59f773
+DEBUG[08-13|09:33:49.959] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:49.959] 🔗 block reached canonical chain          number=26 hash=1c52f3…9003c2
+INFO [08-13|09:33:49.959] 🔨 mined potential block                  number=31 hash=787415…59f773
+DEBUG[08-13|09:33:49.959] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:49.959] Commit new mining work                   number=32 txs=0 uncles=0 elapsed=118.352µs
+INFO [08-13|09:33:50.672] Successfully sealed new block            number=32 hash=431615…dbd407
+DEBUG[08-13|09:33:50.672] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:50.672] 🔗 block reached canonical chain          number=27 hash=2c7c18…f3c554
+INFO [08-13|09:33:50.672] 🔨 mined potential block                  number=32 hash=431615…dbd407
+DEBUG[08-13|09:33:50.672] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:50.672] Commit new mining work                   number=33 txs=0 uncles=0 elapsed=167.485µs
+INFO [08-13|09:33:51.804] Successfully sealed new block            number=33 hash=d1dce2…1024ac
+DEBUG[08-13|09:33:51.804] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:51.804] 🔗 block reached canonical chain          number=28 hash=d8fb6f…aeb76f
+INFO [08-13|09:33:51.804] 🔨 mined potential block                  number=33 hash=d1dce2…1024ac
+DEBUG[08-13|09:33:51.804] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:51.804] Commit new mining work                   number=34 txs=0 uncles=0 elapsed=122.473µs
+INFO [08-13|09:33:53.078] Successfully sealed new block            number=34 hash=cf6330…5248f3
+DEBUG[08-13|09:33:53.078] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:53.078] 🔗 block reached canonical chain          number=29 hash=1094c2…f82ef5
+INFO [08-13|09:33:53.079] 🔨 mined potential block                  number=34 hash=cf6330…5248f3
+DEBUG[08-13|09:33:53.079] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:53.079] Commit new mining work                   number=35 txs=0 uncles=0 elapsed=207.568µs
+DEBUG[08-13|09:33:54.354] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:33:55.450] Successfully sealed new block            number=35 hash=50c8e7…4a7760
+DEBUG[08-13|09:33:55.450] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:33:55.450] 🔗 block reached canonical chain          number=30 hash=d877ab…2fb8d1
+INFO [08-13|09:33:55.450] 🔨 mined potential block                  number=35 hash=50c8e7…4a7760
+DEBUG[08-13|09:33:55.450] Reinjecting stale transactions           count=0
+INFO [08-13|09:33:55.450] Commit new mining work                   number=36 txs=0 uncles=0 elapsed=257.091µs
+INFO [08-13|09:34:00.249] Successfully sealed new block            number=36 hash=2189da…0e2fcf
+DEBUG[08-13|09:34:00.250] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:00.250] 🔗 block reached canonical chain          number=31 hash=787415…59f773
+INFO [08-13|09:34:00.250] 🔨 mined potential block                  number=36 hash=2189da…0e2fcf
+DEBUG[08-13|09:34:00.250] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:00.250] Commit new mining work                   number=37 txs=0 uncles=0 elapsed=131.791µs
+INFO [08-13|09:34:00.688] Successfully sealed new block            number=37 hash=0a0b7d…3816e5
+DEBUG[08-13|09:34:00.688] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:00.689] 🔗 block reached canonical chain          number=32 hash=431615…dbd407
+INFO [08-13|09:34:00.689] 🔨 mined potential block                  number=37 hash=0a0b7d…3816e5
+DEBUG[08-13|09:34:00.689] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:00.689] Commit new mining work                   number=38 txs=0 uncles=0 elapsed=192.019µs
+INFO [08-13|09:34:05.470] Successfully sealed new block            number=38 hash=6d7b4b…c5b76a
+DEBUG[08-13|09:34:05.470] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:05.470] 🔗 block reached canonical chain          number=33 hash=d1dce2…1024ac
+INFO [08-13|09:34:05.470] 🔨 mined potential block                  number=38 hash=6d7b4b…c5b76a
+DEBUG[08-13|09:34:05.470] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:05.471] Commit new mining work                   number=39 txs=0 uncles=0 elapsed=146.379µs
+INFO [08-13|09:34:08.152] Successfully sealed new block            number=39 hash=7d91a9…4d7205
+DEBUG[08-13|09:34:08.153] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:08.153] 🔗 block reached canonical chain          number=34 hash=cf6330…5248f3
+INFO [08-13|09:34:08.153] 🔨 mined potential block                  number=39 hash=7d91a9…4d7205
+DEBUG[08-13|09:34:08.153] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:08.153] Commit new mining work                   number=40 txs=0 uncles=0 elapsed=123.674µs
+INFO [08-13|09:34:09.358] Successfully sealed new block            number=40 hash=5f31a1…66f4aa
+DEBUG[08-13|09:34:09.358] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:09.358] 🔗 block reached canonical chain          number=35 hash=50c8e7…4a7760
+INFO [08-13|09:34:09.358] 🔨 mined potential block                  number=40 hash=5f31a1…66f4aa
+DEBUG[08-13|09:34:09.358] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:09.358] Commit new mining work                   number=41 txs=0 uncles=0 elapsed=156.019µs
+INFO [08-13|09:34:10.217] Successfully sealed new block            number=41 hash=d968b5…18600a
+DEBUG[08-13|09:34:10.217] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:10.217] 🔗 block reached canonical chain          number=36 hash=2189da…0e2fcf
+INFO [08-13|09:34:10.217] 🔨 mined potential block                  number=41 hash=d968b5…18600a
+DEBUG[08-13|09:34:10.217] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:10.217] Commit new mining work                   number=42 txs=0 uncles=0 elapsed=161.034µs
+DEBUG[08-13|09:34:14.355] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:34:17.208] Successfully sealed new block            number=42 hash=b4405b…c35114
+DEBUG[08-13|09:34:17.208] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:17.208] 🔗 block reached canonical chain          number=37 hash=0a0b7d…3816e5
+INFO [08-13|09:34:17.208] 🔨 mined potential block                  number=42 hash=b4405b…c35114
+DEBUG[08-13|09:34:17.208] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:17.208] Commit new mining work                   number=43 txs=0 uncles=0 elapsed=158.476µs
+INFO [08-13|09:34:18.464] Successfully sealed new block            number=43 hash=2e5f4e…5b98c2
+DEBUG[08-13|09:34:18.464] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:34:18.464] 🔗 block reached canonical chain          number=38 hash=6d7b4b…c5b76a
+INFO [08-13|09:34:18.464] 🔨 mined potential block                  number=43 hash=2e5f4e…5b98c2
+DEBUG[08-13|09:34:18.464] Reinjecting stale transactions           count=0
+INFO [08-13|09:34:18.464] Commit new mining work                   number=44 txs=0 uncles=0 elapsed=115.937µs
+INFO [08-13|09:34:24.664] HTTP endpoint closed                     url=http://172.16.20.65:8103
+DEBUG[08-13|09:34:24.664] RPC Server shutdown initiatied 
+INFO [08-13|09:34:24.664] IPC endpoint closed                      endpoint=/home/lt048/Downloads/eth-private-net/lily/geth.ipc
+DEBUG[08-13|09:34:24.664] RPC Server shutdown initiatied 
+INFO [08-13|09:34:24.664] Writing cached state to disk             block=43 hash=2e5f4e…5b98c2 root=1d697b…8c6e71
+INFO [08-13|09:34:24.664] Persisted trie from memory database      nodes=3 size=474.00B time=82.967µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=127 livesize=19.90kB
+INFO [08-13|09:34:24.664] Writing cached state to disk             block=42 hash=b4405b…c35114 root=c1aba1…79797c
+INFO [08-13|09:34:24.664] Persisted trie from memory database      nodes=3 size=474.00B time=30.767µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=124 livesize=19.43kB
+DEBUG[08-13|09:34:24.664] Dereferenced trie from memory database   nodes=3 size=473.00B time=4.734µs  gcnodes=3 gcsize=473.00B gctime=4.371µs livenodes=121 livesize=18.96kB
+DEBUG[08-13|09:34:24.664] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.538µs  gcnodes=6 gcsize=946.00B gctime=7.754µs livenodes=118 livesize=18.48kB
+DEBUG[08-13|09:34:24.664] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.025µs  gcnodes=9 gcsize=1.42kB  gctime=10.621µs livenodes=115 livesize=18.01kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.283µs  gcnodes=12 gcsize=1.89kB  gctime=13.742µs livenodes=112 livesize=17.54kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.169µs  gcnodes=15 gcsize=2.37kB  gctime=16.761µs livenodes=109 livesize=17.06kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=5.224µs  gcnodes=18 gcsize=2.84kB  gctime=21.825µs livenodes=106 livesize=16.59kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.209µs  gcnodes=21 gcsize=3.31kB  gctime=24.874µs livenodes=103 livesize=16.12kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3µs      gcnodes=24 gcsize=3.79kB  gctime=27.717µs livenodes=100 livesize=15.64kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.222µs  gcnodes=27 gcsize=4.26kB  gctime=30.781µs livenodes=97  livesize=15.17kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.963µs  gcnodes=30 gcsize=4.74kB  gctime=33.588µs livenodes=94  livesize=14.69kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.425µs  gcnodes=33 gcsize=5.21kB  gctime=36.853µs livenodes=91  livesize=14.22kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=5.178µs  gcnodes=36 gcsize=5.68kB  gctime=41.867µs livenodes=88  livesize=13.75kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.029µs  gcnodes=39 gcsize=6.16kB  gctime=44.738µs livenodes=85  livesize=13.27kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.917µs  gcnodes=42 gcsize=6.63kB  gctime=47.5µs   livenodes=82  livesize=12.80kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.052µs  gcnodes=45 gcsize=7.11kB  gctime=50.398µs livenodes=79  livesize=12.32kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.074µs  gcnodes=48 gcsize=7.58kB  gctime=53.317µs livenodes=76  livesize=11.85kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=4.789µs  gcnodes=51 gcsize=8.05kB  gctime=57.949µs livenodes=73  livesize=11.38kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.047µs  gcnodes=54 gcsize=8.53kB  gctime=60.842µs livenodes=70  livesize=10.90kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.776µs  gcnodes=57 gcsize=9.00kB  gctime=63.462µs livenodes=67  livesize=10.43kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.905µs  gcnodes=60 gcsize=9.47kB  gctime=66.214µs livenodes=64  livesize=9.95kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.059µs  gcnodes=63 gcsize=9.95kB  gctime=69.089µs livenodes=61  livesize=9.48kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=5.298µs  gcnodes=66 gcsize=10.42kB gctime=74.228µs livenodes=58  livesize=9.01kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.089µs  gcnodes=69 gcsize=10.90kB gctime=77.162µs livenodes=55  livesize=8.53kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.882µs  gcnodes=72 gcsize=11.37kB gctime=79.887µs livenodes=52  livesize=8.06kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.128µs  gcnodes=75 gcsize=11.85kB gctime=82.825µs livenodes=49  livesize=7.58kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.955µs  gcnodes=78 gcsize=12.32kB gctime=85.626µs livenodes=46  livesize=7.11kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.642µs  gcnodes=81 gcsize=12.79kB gctime=88.109µs livenodes=43  livesize=6.64kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=4.875µs  gcnodes=84 gcsize=13.27kB gctime=92.835µs livenodes=40  livesize=6.16kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.874µs  gcnodes=87 gcsize=13.74kB gctime=95.556µs livenodes=37  livesize=5.69kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.891µs  gcnodes=90 gcsize=14.21kB gctime=98.298µs livenodes=34  livesize=5.21kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.884µs  gcnodes=93 gcsize=14.69kB gctime=101.026µs livenodes=31  livesize=4.74kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.905µs  gcnodes=96 gcsize=15.16kB gctime=103.781µs livenodes=28  livesize=4.27kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=4.671µs  gcnodes=99 gcsize=15.64kB gctime=108.296µs livenodes=25  livesize=3.79kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.126µs  gcnodes=102 gcsize=16.11kB gctime=111.223µs livenodes=22  livesize=3.32kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.999µs  gcnodes=105 gcsize=16.59kB gctime=114.065µs livenodes=19  livesize=2.84kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.374µs  gcnodes=108 gcsize=17.06kB gctime=117.284µs livenodes=16  livesize=2.37kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.064µs  gcnodes=111 gcsize=17.53kB gctime=120.19µs  livenodes=13  livesize=1.90kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=4.82µs   gcnodes=114 gcsize=18.01kB gctime=124.856µs livenodes=10  livesize=1.42kB
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.549µs  gcnodes=117 gcsize=18.48kB gctime=128.224µs livenodes=7   livesize=948.00B
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.001µs  gcnodes=120 gcsize=18.95kB gctime=131.068µs livenodes=4   livesize=474.00B
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.815µs  gcnodes=123 gcsize=19.43kB gctime=133.728µs livenodes=1   livesize=0.00B
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=0 size=0.00B   time=655ns    gcnodes=123 gcsize=19.43kB gctime=134.229µs livenodes=1   livesize=0.00B
+DEBUG[08-13|09:34:24.665] Dereferenced trie from memory database   nodes=0 size=0.00B   time=616ns    gcnodes=123 gcsize=19.43kB gctime=134.687µs livenodes=1   livesize=0.00B
+INFO [08-13|09:34:24.665] Blockchain manager stopped 
+INFO [08-13|09:34:24.665] Stopping Ethereum protocol 
+INFO [08-13|09:34:24.665] Ethereum protocol stopped 
+INFO [08-13|09:34:24.665] Transaction pool stopped 
+INFO [08-13|09:34:24.665] Database closed                          database=/home/lt048/Downloads/eth-private-net/lily/geth/chaindata
+DEBUG[08-13|09:34:24.665] Read error                               err="accept tcp [::]:40303: use of closed network connection"
+DEBUG[08-13|09:34:24.665] Deleting port mapping                    proto=tcp extport=40303 intport=40303 interface="UPnP or NAT-PMP"
+DEBUG[08-13|09:35:19.165] Sanitizing Go's GC trigger               percent=100
+INFO [08-13|09:35:19.165] Maximum peer count                       ETH=25 LES=0 total=25
+DEBUG[08-13|09:35:19.165] FS scan times                            list=48.086µs set=9.44µs diff=6.039µs
+INFO [08-13|09:35:19.166] Starting peer-to-peer node               instance=Geth/v1.8.12-stable-37685930/linux-amd64/go1.10
+INFO [08-13|09:35:19.166] Allocated cache and file handles         database=/home/lt048/Downloads/eth-private-net/lily/geth/chaindata cache=768 handles=512
+INFO [08-13|09:35:19.181] Initialised chain configuration          config="{ChainID: 8888 Homestead: <nil> DAO: <nil> DAOSupport: false EIP150: <nil> EIP155: <nil> EIP158: <nil> Byzantium: 0 Constantinople: <nil> Engine: unknown}"
+INFO [08-13|09:35:19.181] Disk storage enabled for ethash caches   dir=/home/lt048/Downloads/eth-private-net/lily/geth/ethash count=3
+INFO [08-13|09:35:19.181] Disk storage enabled for ethash DAGs     dir=/home/lt048/.ethash                                    count=2
+INFO [08-13|09:35:19.181] Initialising Ethereum protocol           versions="[63 62]" network=8888
+INFO [08-13|09:35:19.181] Loaded most recent local header          number=0 hash=7e7c49…36cb21 td=400000
+INFO [08-13|09:35:19.181] Loaded most recent local full block      number=0 hash=7e7c49…36cb21 td=400000
+INFO [08-13|09:35:19.181] Loaded most recent local fast block      number=0 hash=7e7c49…36cb21 td=400000
+DEBUG[08-13|09:35:19.181] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:19.181] Regenerated local transaction journal    transactions=0 accounts=0
+DEBUG[08-13|09:35:19.181] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:35:19.182] Starting P2P networking 
+INFO [08-13|09:35:19.182] RLPx listener up                         self="enode://1b4db3db2c3c2eb0eb31d66c4563645bf8521209cdd393b074d4e309d9567f55a520afdf339df00099f4b2f67a681162174f59b9cc0ece8eb7941c3785c55cfe@[::]:40303?discport=0"
+DEBUG[08-13|09:35:19.183] InProc registered                        service=&{node:0xc420323b80} namespace=admin
+DEBUG[08-13|09:35:19.183] InProc registered                        service=&{node:0xc420323b80} namespace=admin
+DEBUG[08-13|09:35:19.183] InProc registered                        service="&{mu:{state:0 sema:0} cpuW:<nil> cpuFile: traceW:<nil> traceFile:}" namespace=debug
+DEBUG[08-13|09:35:19.183] InProc registered                        service=&{node:0xc420323b80}                                                 namespace=debug
+DEBUG[08-13|09:35:19.183] InProc registered                        service=&{stack:0xc420323b80}                                                namespace=web3
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{b:0xc4203d18f0}                                                    namespace=eth
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{b:0xc4203d18f0}                                                    namespace=eth
+DEBUG[08-13|09:35:19.184] InProc registered                        service="&{b:0xc4203d18f0 nonceLock:0xc4203d1970}"                           namespace=eth
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{b:0xc4203d18f0}                                                    namespace=txpool
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{b:0xc4203d18f0}                                                    namespace=debug
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{b:0xc4203d18f0}                                                    namespace=debug
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{am:0xc4200dcd00}                                                   namespace=eth
+DEBUG[08-13|09:35:19.184] InProc registered                        service="&{am:0xc4200dcd00 nonceLock:0xc4203d1970 b:0xc4203d18f0}"           namespace=personal
+DEBUG[08-13|09:35:19.184] InProc registered                        service=&{e:0xc4203ae9a0}                                                    namespace=eth
+DEBUG[08-13|09:35:19.184] InProc registered                        service="&{e:0xc4203ae9a0 agent:0xc42011a500}"                               namespace=eth
+DEBUG[08-13|09:35:19.185] InProc registered                        service="&{d:0xc4200e04e0 mux:0xc420258d20 installSyncSubscription:0xc420342240 uninstallSyncSubscription:0xc4203422a0}" namespace=eth
+DEBUG[08-13|09:35:19.185] InProc registered                        service=&{e:0xc4203ae9a0}                                                                                                namespace=miner
+DEBUG[08-13|09:35:19.185] InProc registered                        service="&{backend:0xc4203d18f0 mux:0xc420258d20 quit:<nil> chainDb:0xc4200fe420 events:0xc420172e60 filtersMu:{state:0 sema:0} filters:map[]}" namespace=eth
+DEBUG[08-13|09:35:19.185] InProc registered                        service=&{eth:0xc4203ae9a0}                                                                                                                     namespace=admin
+DEBUG[08-13|09:35:19.185] InProc registered                        service=&{eth:0xc4203ae9a0}                                                                                                                     namespace=debug
+DEBUG[08-13|09:35:19.185] InProc registered                        service="&{config:0xc42011a000 eth:0xc4203ae9a0}"                                                                                               namespace=debug
+DEBUG[08-13|09:35:19.185] InProc registered                        service="&{net:0xc420344000 networkVersion:8888}"                                                                                               namespace=net
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=admin
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=admin
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=web3
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=txpool
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=personal
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.185] IPC registered                           namespace=miner
+DEBUG[08-13|09:35:19.186] IPC registered                           namespace=eth
+DEBUG[08-13|09:35:19.186] IPC registered                           namespace=admin
+DEBUG[08-13|09:35:19.186] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.186] IPC registered                           namespace=debug
+DEBUG[08-13|09:35:19.186] IPC registered                           namespace=net
+INFO [08-13|09:35:19.186] IPC endpoint opened                      url=/home/lt048/Downloads/eth-private-net/lily/geth.ipc
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=web3
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=personal
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=eth
+DEBUG[08-13|09:35:19.186] HTTP registered                          namespace=net
+INFO [08-13|09:35:19.186] HTTP endpoint opened                     url=http://172.16.20.65:8103                            cors="\"*\"" vhosts=localhost
+INFO [08-13|09:35:19.186] Transaction pool price threshold updated price=18000000000
+INFO [08-13|09:35:19.186] Etherbase automatically configured       address=0xDda6eF2fF259928c561b2D30F0caD2C2736Ce8b6
+INFO [08-13|09:35:19.186] Starting mining operation 
+INFO [08-13|09:35:19.187] Commit new mining work                   number=1 txs=0 uncles=0 elapsed=243.133µs
+DEBUG[08-13|09:35:19.187] Loaded old ethash dataset from disk      epoch=0
+DEBUG[08-13|09:35:19.187] Loaded old ethash dataset from disk      epoch=1
+DEBUG[08-13|09:35:21.284] Couldn't add port mapping                proto=tcp extport=40303 intport=40303 interface="UPnP or NAT-PMP" err="no UPnP or NAT-PMP router discovered"
+INFO [08-13|09:35:29.933] Successfully sealed new block            number=1 hash=18b217…1baa4b
+DEBUG[08-13|09:35:29.933] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:29.933] 🔨 mined potential block                  number=1 hash=18b217…1baa4b
+DEBUG[08-13|09:35:29.933] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:29.933] Commit new mining work                   number=2 txs=0 uncles=0 elapsed=192.865µs
+INFO [08-13|09:35:31.340] Successfully sealed new block            number=2 hash=fa0dfa…5bb21c
+DEBUG[08-13|09:35:31.341] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:31.341] 🔨 mined potential block                  number=2 hash=fa0dfa…5bb21c
+DEBUG[08-13|09:35:31.341] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:31.341] Commit new mining work                   number=3 txs=0 uncles=0 elapsed=110.586µs
+DEBUG[08-13|09:35:39.182] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:35:39.273] Successfully sealed new block            number=3 hash=005bae…a0e30c
+DEBUG[08-13|09:35:39.273] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:39.273] 🔨 mined potential block                  number=3 hash=005bae…a0e30c
+DEBUG[08-13|09:35:39.273] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:39.273] Commit new mining work                   number=4 txs=0 uncles=0 elapsed=155.021µs
+INFO [08-13|09:35:50.233] Successfully sealed new block            number=4 hash=4b4b20…7d1d71
+DEBUG[08-13|09:35:50.233] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:50.233] 🔨 mined potential block                  number=4 hash=4b4b20…7d1d71
+DEBUG[08-13|09:35:50.233] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:50.234] Commit new mining work                   number=5 txs=0 uncles=0 elapsed=147.5µs
+INFO [08-13|09:35:52.154] Successfully sealed new block            number=5 hash=684fbd…04b8d5
+DEBUG[08-13|09:35:52.155] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:52.155] 🔨 mined potential block                  number=5 hash=684fbd…04b8d5
+DEBUG[08-13|09:35:52.155] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:52.155] Commit new mining work                   number=6 txs=0 uncles=0 elapsed=201.985µs
+INFO [08-13|09:35:56.012] Successfully sealed new block            number=6 hash=365246…afd496
+DEBUG[08-13|09:35:56.012] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:35:56.012] 🔗 block reached canonical chain          number=1 hash=18b217…1baa4b
+INFO [08-13|09:35:56.012] 🔨 mined potential block                  number=6 hash=365246…afd496
+DEBUG[08-13|09:35:56.012] Reinjecting stale transactions           count=0
+INFO [08-13|09:35:56.012] Commit new mining work                   number=7 txs=0 uncles=0 elapsed=141.348µs
+DEBUG[08-13|09:35:59.182] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:36:00.855] Successfully sealed new block            number=7 hash=49603b…2c7bdb
+DEBUG[08-13|09:36:00.855] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:00.855] 🔗 block reached canonical chain          number=2 hash=fa0dfa…5bb21c
+INFO [08-13|09:36:00.855] 🔨 mined potential block                  number=7 hash=49603b…2c7bdb
+DEBUG[08-13|09:36:00.855] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:00.855] Commit new mining work                   number=8 txs=0 uncles=0 elapsed=132.767µs
+INFO [08-13|09:36:08.206] Successfully sealed new block            number=8 hash=e53759…5531f3
+DEBUG[08-13|09:36:08.207] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:08.207] 🔗 block reached canonical chain          number=3 hash=005bae…a0e30c
+INFO [08-13|09:36:08.207] 🔨 mined potential block                  number=8 hash=e53759…5531f3
+DEBUG[08-13|09:36:08.207] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:08.207] Commit new mining work                   number=9 txs=0 uncles=0 elapsed=162.05µs
+INFO [08-13|09:36:15.817] Successfully sealed new block            number=9 hash=3855e4…8da616
+DEBUG[08-13|09:36:15.817] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:15.817] 🔗 block reached canonical chain          number=4 hash=4b4b20…7d1d71
+INFO [08-13|09:36:15.817] 🔨 mined potential block                  number=9 hash=3855e4…8da616
+DEBUG[08-13|09:36:15.817] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:15.817] Commit new mining work                   number=10 txs=0 uncles=0 elapsed=152.052µs
+DEBUG[08-13|09:36:19.182] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+DEBUG[08-13|09:36:39.182] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+INFO [08-13|09:36:41.093] Successfully sealed new block            number=10 hash=392397…8d793e
+DEBUG[08-13|09:36:41.093] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:41.093] 🔗 block reached canonical chain          number=5  hash=684fbd…04b8d5
+INFO [08-13|09:36:41.093] 🔨 mined potential block                  number=10 hash=392397…8d793e
+DEBUG[08-13|09:36:41.093] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:41.093] Commit new mining work                   number=11 txs=0 uncles=0 elapsed=155.224µs
+INFO [08-13|09:36:44.908] Successfully sealed new block            number=11 hash=d884c4…410bdc
+DEBUG[08-13|09:36:44.908] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:44.908] 🔗 block reached canonical chain          number=6  hash=365246…afd496
+INFO [08-13|09:36:44.908] 🔨 mined potential block                  number=11 hash=d884c4…410bdc
+DEBUG[08-13|09:36:44.908] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:44.908] Commit new mining work                   number=12 txs=0 uncles=0 elapsed=132.211µs
+INFO [08-13|09:36:51.705] Successfully sealed new block            number=12 hash=164c12…efe3f1
+DEBUG[08-13|09:36:51.706] Trie cache stats after commit            misses=0 unloads=0
+INFO [08-13|09:36:51.706] 🔗 block reached canonical chain          number=7  hash=49603b…2c7bdb
+INFO [08-13|09:36:51.706] 🔨 mined potential block                  number=12 hash=164c12…efe3f1
+DEBUG[08-13|09:36:51.706] Reinjecting stale transactions           count=0
+INFO [08-13|09:36:51.706] Commit new mining work                   number=13 txs=0 uncles=0 elapsed=141.131µs
+INFO [08-13|09:36:53.446] HTTP endpoint closed                     url=http://172.16.20.65:8103
+DEBUG[08-13|09:36:53.446] RPC Server shutdown initiatied 
+INFO [08-13|09:36:53.446] IPC endpoint closed                      endpoint=/home/lt048/Downloads/eth-private-net/lily/geth.ipc
+DEBUG[08-13|09:36:53.446] RPC Server shutdown initiatied 
+INFO [08-13|09:36:53.446] Writing cached state to disk             block=12 hash=164c12…efe3f1 root=544a4e…5953b5
+INFO [08-13|09:36:53.446] Persisted trie from memory database      nodes=3 size=474.00B time=85.156µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=34 livesize=5.21kB
+INFO [08-13|09:36:53.446] Writing cached state to disk             block=11 hash=d884c4…410bdc root=5e53a1…306984
+INFO [08-13|09:36:53.446] Persisted trie from memory database      nodes=3 size=474.00B time=29.25µs  gcnodes=0 gcsize=0.00B gctime=0s livenodes=31 livesize=4.74kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=473.00B time=7.087µs  gcnodes=3 gcsize=473.00B gctime=6.816µs livenodes=28 livesize=4.26kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.413µs  gcnodes=6 gcsize=946.00B gctime=9.772µs livenodes=25 livesize=3.79kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.438µs  gcnodes=9 gcsize=1.42kB  gctime=12.963µs livenodes=22 livesize=3.32kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=473.00B time=3.205µs  gcnodes=12 gcsize=1.89kB  gctime=15.873µs livenodes=19 livesize=2.84kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=473.00B time=2.955µs  gcnodes=15 gcsize=2.37kB  gctime=18.619µs livenodes=16 livesize=2.37kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=474.00B time=5.032µs  gcnodes=18 gcsize=2.84kB  gctime=23.435µs livenodes=13 livesize=1.90kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.842µs  gcnodes=21 gcsize=3.31kB  gctime=27.065µs livenodes=10 livesize=1.42kB
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.746µs  gcnodes=24 gcsize=3.79kB  gctime=30.613µs livenodes=7  livesize=948.00B
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=474.00B time=2.989µs  gcnodes=27 gcsize=4.26kB  gctime=33.45µs  livenodes=4  livesize=474.00B
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=3 size=474.00B time=3.035µs  gcnodes=30 gcsize=4.74kB  gctime=36.278µs livenodes=1  livesize=0.00B
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=0 size=0.00B   time=760ns    gcnodes=30 gcsize=4.74kB  gctime=36.887µs livenodes=1  livesize=0.00B
+DEBUG[08-13|09:36:53.446] Dereferenced trie from memory database   nodes=0 size=0.00B   time=674ns    gcnodes=30 gcsize=4.74kB  gctime=37.42µs  livenodes=1  livesize=0.00B
+INFO [08-13|09:36:53.446] Blockchain manager stopped 
+INFO [08-13|09:36:53.446] Stopping Ethereum protocol 
+INFO [08-13|09:36:53.446] Ethereum protocol stopped 
+INFO [08-13|09:36:53.446] Transaction pool stopped 
+INFO [08-13|09:36:53.446] Database closed                          database=/home/lt048/Downloads/eth-private-net/lily/geth/chaindata
+DEBUG[08-13|09:36:53.446] Read error                               err="accept tcp [::]:40303: use of closed network connection"
+DEBUG[08-13|09:36:53.446] Deleting port mapping                    proto=tcp extport=40303 intport=40303 interface="UPnP or NAT-PMP"
